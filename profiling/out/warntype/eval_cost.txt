@@ -1,0 +1,19 @@
+MethodInstance for SymbolicRegression.LossFunctionsModule.eval_cost(::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, ::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing})
+  from eval_cost(dataset::Dataset{T, L}, member, options::SymbolicRegression.CoreModule.OptionsStructModule.AbstractOptions; complexity, eval_context, kws...) where {T, L<:Real} @ SymbolicRegression.LossFunctionsModule ~/.julia/packages/SymbolicRegression/g1JuB/src/LossFunctions.jl:226
+Static Parameters
+  T = Float32
+  L = Float32
+Arguments
+  #self#::Core.Const(SymbolicRegression.LossFunctionsModule.eval_cost)
+  dataset::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  member::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+Body::Tuple{Float32, Float32}
+1 ─ %1 = SymbolicRegression.LossFunctionsModule.:(var"#eval_cost#3")::Core.Const(SymbolicRegression.LossFunctionsModule.var"#eval_cost#3")
+│   %2 = SymbolicRegression.LossFunctionsModule.nothing::Core.Const(nothing)
+│   %3 = SymbolicRegression.LossFunctionsModule.nothing::Core.Const(nothing)
+│   %4 = Core.NamedTuple()::Core.Const(NamedTuple())
+│   %5 = Base.pairs(%4)::Core.Const(Base.Pairs{Symbol, Union{}, Nothing, @NamedTuple{}}())
+│   %6 = (%1)(%2, %3, %5, #self#, dataset, member, options)::Tuple{Float32, Float32}
+└──      return %6
+

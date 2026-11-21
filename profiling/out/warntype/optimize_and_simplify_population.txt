@@ -1,0 +1,215 @@
+MethodInstance for SymbolicRegression.SingleIterationModule.optimize_and_simplify_population(::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, ::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, ::Int64, ::Nothing)
+  from optimize_and_simplify_population(dataset::D, pop::P, options::SymbolicRegression.CoreModule.OptionsStructModule.AbstractOptions, curmaxsize::Int64, trace::Union{Nothing, Dict{String, Any}}) where {T, L, D<:Dataset{T, L}, P<:(Population{T, L, N, PM} where {N<:(AbstractExpression{T}), PM<:AbstractPopMember{T, L, N}})} @ SymbolicRegression.SingleIterationModule ~/.julia/packages/SymbolicRegression/g1JuB/src/SingleIteration.jl:82
+Static Parameters
+  T = Float32
+  L = Float32
+  D = SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  P = Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+Arguments
+  #self#::Core.Const(SymbolicRegression.SingleIterationModule.optimize_and_simplify_population)
+  dataset::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  pop@_3::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+  curmaxsize::Int64
+  trace::Core.Const(nothing)
+Locals
+  @_7::UNION{NOTHING, TUPLE{INT64, INT64}}
+  @_8::Int64
+  @_9::UNION{NOTHING, TUPLE{INT64, INT64}}
+  tmp_num_evals::Float64
+  num_evals::Float64
+  batched_dataset::UNION{SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.SUBDATASET{FLOAT32, FLOAT32, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, VECTOR{INT64}}}
+  do_optimization::BitVector
+  array_num_evals::Vector{Float64}
+  @_15::Int64
+  j@_16::Int64
+  tree::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+  new_ref::Int64
+  old_ref::Int64
+  j@_20::Int64
+  pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  @_22::UNION{SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.SUBDATASET{FLOAT32, FLOAT32, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, VECTOR{INT64}}}
+  @_23::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+Body::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+1 ──        (pop@_21 = pop@_3)
+│           Core.NewvarNode(:(@_7))
+│           Core.NewvarNode(:(@_8))
+│           Core.NewvarNode(:(@_9))
+│           Core.NewvarNode(:(tmp_num_evals))
+│           Core.NewvarNode(:(num_evals))
+│           Core.NewvarNode(:(batched_dataset))
+│    %8   = SymbolicRegression.SingleIterationModule.Tuple::Core.Const(Tuple)
+│    %9   = $(Expr(:static_parameter, 4))::Core.Const(Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}})
+│    %10  = SymbolicRegression.SingleIterationModule.Float64::Core.Const(Float64)
+│    %11  = Core.apply_type(%8, %9, %10)::Core.Const(Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64})
+│    %12  = SymbolicRegression.SingleIterationModule.zeros::Core.Const(zeros)
+│    %13  = SymbolicRegression.SingleIterationModule.Float64::Core.Const(Float64)
+│    %14  = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %15  = Base.getproperty(%14, :n)::Int64
+│           (array_num_evals = (%12)(%13, %15))
+│    %17  = SymbolicRegression.SingleIterationModule.:<::Core.Const(<)
+│    %18  = SymbolicRegression.SingleIterationModule.rand::Core.Const(rand)
+│    %19  = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %20  = Base.getproperty(%19, :n)::Int64
+│    %21  = (%18)(%20)::Vector{Float64}
+│    %22  = Base.getproperty(options, :optimizer_probability)::Float64
+│    %23  = Base.broadcasted(%17, %21, %22)::Base.Broadcast.Broadcasted{Base.Broadcast.DefaultArrayStyle{1}, Nothing, typeof(<), Tuple{Vector{Float64}, Float64}}
+│           (do_optimization = Base.materialize(%23))
+│    %25  = SymbolicRegression.SingleIterationModule.batching_required::Core.Const(SymbolicRegression.CoreModule.OptionsStructModule.batching_required)
+│    %26  = (%25)(options, dataset)::Bool
+└───        goto #3 if not %26
+2 ── %28  = SymbolicRegression.SingleIterationModule.batch::Core.Const(SymbolicRegression.CoreModule.DatasetModule.batch)
+│    %29  = SymbolicRegression.SingleIterationModule.get_batch_size::Core.Const(SymbolicRegression.CoreModule.OptionsStructModule.get_batch_size)
+│    %30  = Base.getproperty(dataset, :n)::Int64
+│    %31  = (%29)(options, %30)::Int64
+│           (@_22 = (%28)(dataset, %31))
+└───        goto #4
+3 ── %34  = dataset::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+└───        (@_22 = %34)
+4 ┄─ %36  = @_22::UNION{SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.SUBDATASET{FLOAT32, FLOAT32, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, VECTOR{INT64}}}
+│           (batched_dataset = %36)
+│    %38  = SymbolicRegression.SingleIterationModule.:(:)::Core.Const(Colon())
+│    %39  = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %40  = Base.getproperty(%39, :n)::Int64
+│    %41  = (%38)(1, %40)::Core.PartialStruct(UnitRange{Int64}, Union{Nothing, Bool}[0, 0], Any[Core.Const(1), Int64])
+│           (@_9 = Base.iterate(%41))
+│    %43  = @_9::UNION{NOTHING, TUPLE{INT64, INT64}}
+│    %44  = (%43 === nothing)::Bool
+│    %45  = Base.not_int(%44)::Bool
+└───        goto #12 if not %45
+5 ┄─        Core.NewvarNode(:(@_15))
+│           Core.NewvarNode(:(tree))
+│    %49  = @_9::Tuple{Int64, Int64}
+│           (j@_16 = Core.getfield(%49, 1))
+│    %51  = Core.getfield(%49, 2)::Int64
+│    %52  = Base.getproperty(options, :should_simplify)::Bool
+└───        goto #7 if not %52
+6 ── %54  = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %55  = Base.getproperty(%54, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %56  = j@_16::Int64
+│    %57  = Base.getindex(%55, %56)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│           (tree = Base.getproperty(%57, :tree))
+│    %59  = SymbolicRegression.SingleIterationModule.simplify_tree!::Core.Const(DynamicExpressions.SimplifyModule.simplify_tree!)
+│    %60  = tree::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+│    %61  = Base.getproperty(options, :operators)::OPERATORENUM
+│           (tree = (%59)(%60, %61))
+│    %63  = SymbolicRegression.SingleIterationModule.combine_operators::Core.Const(DynamicExpressions.SimplifyModule.combine_operators)
+│    %64  = tree::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+│    %65  = Base.getproperty(options, :operators)::OPERATORENUM
+│           (tree = (%63)(%64, %65))
+│    %67  = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %68  = Base.getproperty(%67, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %69  = j@_16::Int64
+│    %70  = Base.getindex(%68, %69)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %71  = tree::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+└───        Base.setproperty!(%70, :tree, %71)
+7 ┄─ %73  = Base.getproperty(options, :should_optimize_constants)::Bool
+└───        goto #10 if not %73
+8 ── %75  = do_optimization::BitVector
+│    %76  = j@_16::Int64
+│    %77  = Base.getindex(%75, %76)::Bool
+└───        goto #10 if not %77
+9 ── %79  = SymbolicRegression.SingleIterationModule.optimize_constants::Core.Const(SymbolicRegression.ConstantOptimizationModule.optimize_constants)
+│    %80  = batched_dataset::UNION{SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.SUBDATASET{FLOAT32, FLOAT32, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, VECTOR{INT64}}}
+│    %81  = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %82  = Base.getproperty(%81, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %83  = j@_16::Int64
+│    %84  = Base.getindex(%82, %83)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %85  = (%79)(%80, %84, options)::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}
+│    %86  = Base.indexed_iterate(%85, 1)::Core.PartialStruct(Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Int64}, Union{Nothing, Bool}[0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Core.Const(2)])
+│    %87  = Core.getfield(%86, 1)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│           (@_15 = Core.getfield(%86, 2))
+│    %89  = @_15::Core.Const(2)
+│    %90  = Base.indexed_iterate(%85, 2, %89)::Core.PartialStruct(Tuple{Float64, Int64}, Union{Nothing, Bool}[0, 0], Any[Float64, Core.Const(3)])
+│    %91  = Core.getfield(%90, 1)::Float64
+│    %92  = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %93  = Base.getproperty(%92, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %94  = j@_16::Int64
+│           Base.setindex!(%93, %87, %94)
+│    %96  = array_num_evals::Vector{Float64}
+│    %97  = j@_16::Int64
+└───        Base.setindex!(%96, %91, %97)
+10 ┄        (@_9 = Base.iterate(%41, %51))
+│    %100 = @_9::UNION{NOTHING, TUPLE{INT64, INT64}}
+│    %101 = (%100 === nothing)::Bool
+│    %102 = Base.not_int(%101)::Bool
+└───        goto #12 if not %102
+11 ─        goto #5
+12 ┄ %105 = SymbolicRegression.SingleIterationModule.sum::Core.Const(sum)
+│    %106 = array_num_evals::Vector{Float64}
+│           (num_evals = (%105)(%106))
+│    %108 = SymbolicRegression.SingleIterationModule.finalize_costs::Core.Const(SymbolicRegression.PopulationModule.finalize_costs)
+│    %109 = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %110 = (%108)(dataset, %109, options)::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+│    %111 = Base.indexed_iterate(%110, 1)::Core.PartialStruct(Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Int64}, Union{Nothing, Bool}[0, 0], Any[Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Core.Const(2)])
+│           (pop@_21 = Core.getfield(%111, 1))
+│           (@_8 = Core.getfield(%111, 2))
+│    %114 = @_8::Core.Const(2)
+│    %115 = Base.indexed_iterate(%110, 2, %114)::Core.PartialStruct(Tuple{Float64, Int64}, Union{Nothing, Bool}[0, 0], Any[Float64, Core.Const(3)])
+│           (tmp_num_evals = Core.getfield(%115, 1))
+│    %117 = SymbolicRegression.SingleIterationModule.:+::Core.Const(+)
+│    %118 = num_evals::Float64
+│    %119 = tmp_num_evals::Float64
+│           (num_evals = (%117)(%118, %119))
+│    %121 = SymbolicRegression.SingleIterationModule.:(:)::Core.Const(Colon())
+│    %122 = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %123 = Base.getproperty(%122, :n)::Int64
+│    %124 = (%121)(1, %123)::Core.PartialStruct(UnitRange{Int64}, Union{Nothing, Bool}[0, 0], Any[Core.Const(1), Int64])
+│           (@_7 = Base.iterate(%124))
+│    %126 = @_7::UNION{NOTHING, TUPLE{INT64, INT64}}
+│    %127 = (%126 === nothing)::Bool
+│    %128 = Base.not_int(%127)::Bool
+└───        goto #15 if not %128
+13 ┄ %130 = @_7::Tuple{Int64, Int64}
+│           (j@_20 = Core.getfield(%130, 1))
+│    %132 = Core.getfield(%130, 2)::Int64
+│    %133 = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %134 = Base.getproperty(%133, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %135 = j@_20::Int64
+│    %136 = Base.getindex(%134, %135)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│           (old_ref = Base.getproperty(%136, :ref))
+│    %138 = SymbolicRegression.SingleIterationModule.generate_reference::Core.Const(SymbolicRegression.PopMemberModule.generate_reference)
+│           (new_ref = (%138)())
+│    %140 = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %141 = Base.getproperty(%140, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %142 = j@_20::Int64
+│    %143 = Base.getindex(%141, %142)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %144 = old_ref::Int64
+│           Base.setproperty!(%143, :parent, %144)
+│    %146 = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %147 = Base.getproperty(%146, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %148 = j@_20::Int64
+│    %149 = Base.getindex(%147, %148)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %150 = new_ref::Int64
+│           Base.setproperty!(%149, :ref, %150)
+│    %152 = SymbolicRegression.SingleIterationModule.trace_optimization!::Core.Const(SymbolicRegression.TracingModule.trace_optimization!)
+│    %153 = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %154 = Base.getproperty(%153, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %155 = j@_20::Int64
+│    %156 = Base.getindex(%154, %155)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %157 = old_ref::Int64
+│    %158 = new_ref::Int64
+│    %159 = do_optimization::BitVector
+│    %160 = j@_20::Int64
+│    %161 = Base.getindex(%159, %160)::Bool
+│           (%152)(trace, %156, %157, %158, %161, options)
+│           (@_7 = Base.iterate(%124, %132))
+│    %164 = @_7::UNION{NOTHING, TUPLE{INT64, INT64}}
+│    %165 = (%164 === nothing)::Bool
+│    %166 = Base.not_int(%165)::Bool
+└───        goto #15 if not %166
+14 ─        goto #13
+15 ┄ %169 = pop@_21::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %170 = num_evals::Float64
+│    %171 = Core.tuple(%169, %170)::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+│           (@_23 = %171)
+│    %173 = @_23::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+│    %174 = (%173 isa %11)::Core.Const(true)
+└───        goto #17 if not %174
+16 ─        goto #18
+17 ─        Core.Const(:(@_23))
+│           Core.Const(:(Base.convert(%11, %177)))
+└───        Core.Const(:(@_23 = Core.typeassert(%178, %11)))
+18 ┄ %180 = @_23::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+└───        return %180
+

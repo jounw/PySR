@@ -1,0 +1,137 @@
+MethodInstance for SymbolicRegression.ConstantOptimizationModule.var"#optimize_constants#1"(::TaskLocalRNG, ::typeof(SymbolicRegression.ConstantOptimizationModule.optimize_constants), ::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, ::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing})
+  from var"#optimize_constants#1"(rng::AbstractRNG, ::typeof(SymbolicRegression.ConstantOptimizationModule.optimize_constants), dataset::Dataset{T, L}, member::P, options::SymbolicRegression.CoreModule.OptionsStructModule.AbstractOptions) where {T, L<:Real, N, P<:AbstractPopMember{T, L, N}} @ SymbolicRegression.ConstantOptimizationModule ~/.julia/packages/SymbolicRegression/g1JuB/src/ConstantOptimization.jl:141
+Static Parameters
+  T = Float32
+  L = Float32
+  N = Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+  P = PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+Arguments
+  #optimize_constants#1::Core.Const(SymbolicRegression.ConstantOptimizationModule.var"#optimize_constants#1")
+  rng::Core.Const(TaskLocalRNG())
+  @_3::Core.Const(SymbolicRegression.ConstantOptimizationModule.optimize_constants)
+  dataset::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  member::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+Locals
+  @_7::Int64
+  algorithm::Optim.Newton{LineSearches.InitialStatic{Float64}, LineSearches.BackTracking{Float64, Int64}}
+  nconst::Int64
+  refs::Vector{Base.RefValue{Node{Float32, 2}}}
+  x0::Vector{Float32}
+  @_12::Union{}
+  @_13::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}
+  @_14::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}
+  @_15::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}
+Body::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}
+1 ──        nothing
+│           Core.NewvarNode(:(@_7))
+│           Core.NewvarNode(:(algorithm))
+│           Core.NewvarNode(:(nconst))
+│           Core.NewvarNode(:(refs))
+│           Core.NewvarNode(:(x0))
+│    %7   = SymbolicRegression.ConstantOptimizationModule.Tuple::Core.Const(Tuple)
+│    %8   = $(Expr(:static_parameter, 4))::Core.Const(PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}})
+│    %9   = SymbolicRegression.ConstantOptimizationModule.Float64::Core.Const(Float64)
+│    %10  = Core.apply_type(%7, %8, %9)::Core.Const(Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64})
+│    %11  = SymbolicRegression.ConstantOptimizationModule.can_optimize::Core.Const(SymbolicRegression.ConstantOptimizationModule.can_optimize)
+│    %12  = Base.getproperty(member, :tree)::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+│    %13  = (%11)(%12, options)::Core.Const(true)
+└───        goto #3 if not %13
+2 ──        goto #4
+3 ──        Core.Const(:(Core.tuple(member, 0.0)))
+│           Core.Const(:(@_12 = %16))
+│           Core.Const(:(@_12))
+│           Core.Const(:(%18 isa %10))
+│           Core.Const(:(goto %22 if not %19))
+│           Core.Const(:(goto %25))
+│           Core.Const(:(@_12))
+│           Core.Const(:(Base.convert(%10, %22)))
+│           Core.Const(:(@_12 = Core.typeassert(%23, %10)))
+│           Core.Const(:(@_12))
+└───        Core.Const(:(return %25))
+4 ┄─ %27  = SymbolicRegression.ConstantOptimizationModule.get_optimizable_parameters::Core.Const(SymbolicRegression.ConstantOptimizationModule.get_optimizable_parameters)
+│    %28  = Base.getproperty(member, :tree)::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+│    %29  = (%27)(%28, options)::Tuple{Vector{Float32}, Vector{Base.RefValue{Node{Float32, 2}}}}
+│    %30  = Base.indexed_iterate(%29, 1)::Core.PartialStruct(Tuple{Vector{Float32}, Int64}, Union{Nothing, Bool}[0, 0], Any[Vector{Float32}, Core.Const(2)])
+│           (x0 = Core.getfield(%30, 1))
+│           (@_7 = Core.getfield(%30, 2))
+│    %33  = @_7::Core.Const(2)
+│    %34  = Base.indexed_iterate(%29, 2, %33)::Core.PartialStruct(Tuple{Vector{Base.RefValue{Node{Float32, 2}}}, Int64}, Union{Nothing, Bool}[0, 0], Any[Vector{Base.RefValue{Node{Float32, 2}}}, Core.Const(3)])
+│           (refs = Core.getfield(%34, 1))
+│    %36  = SymbolicRegression.ConstantOptimizationModule.length::Core.Const(length)
+│    %37  = x0::Vector{Float32}
+│           (nconst = (%36)(%37))
+│    %39  = SymbolicRegression.ConstantOptimizationModule.:(==)::Core.Const(==)
+│    %40  = nconst::Int64
+│    %41  = (%39)(%40, 0)::Bool
+└───        goto #10 if not %41
+5 ── %43  = Core.tuple(member, 0.0)::Core.PartialStruct(Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}, Union{Nothing, Bool}[0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Core.Const(0.0)])
+│           (@_13 = %43)
+│    %45  = @_13::Core.PartialStruct(Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}, Union{Nothing, Bool}[0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Core.Const(0.0)])
+│    %46  = (%45 isa %10)::Core.Const(true)
+└───        goto #7 if not %46
+6 ──        goto #8
+7 ──        Core.Const(:(@_13))
+│           Core.Const(:(Base.convert(%10, %49)))
+└───        Core.Const(:(@_13 = Core.typeassert(%50, %10)))
+8 ┄─ %52  = @_13::Core.PartialStruct(Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}, Union{Nothing, Bool}[0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Core.Const(0.0)])
+└───        return %52
+9 ──        Core.Const(:(goto %55))
+10 ┄ %55  = SymbolicRegression.ConstantOptimizationModule.:(==)::Core.Const(==)
+│    %56  = nconst::Int64
+│    %57  = (%55)(%56, 1)::Bool
+└───        goto #16 if not %57
+11 ─ %59  = SymbolicRegression.ConstantOptimizationModule.:!::Core.Const(!)
+│    %60  = SymbolicRegression.ConstantOptimizationModule.:<:::Core.Const(<:)
+│    %61  = $(Expr(:static_parameter, 1))::Core.Const(Float32)
+│    %62  = SymbolicRegression.ConstantOptimizationModule.Complex::Core.Const(Complex)
+│    %63  = (%60)(%61, %62)::Core.Const(false)
+│    %64  = (%59)(%63)::Core.Const(true)
+└───        goto #16 if not %64
+12 ─ %66  = (:linesearch,)::Core.Const((:linesearch,))
+│    %67  = Core.apply_type(Core.NamedTuple, %66)::Core.Const(NamedTuple{(:linesearch,)})
+│    %68  = SymbolicRegression.ConstantOptimizationModule.LineSearches::Core.Const(LineSearches)
+│    %69  = Base.getproperty(%68, :BackTracking)::Core.Const(LineSearches.BackTracking)
+│    %70  = (%69)()::Core.Const(LineSearches.BackTracking{Float64, Int64}(0.0001, 0.5, 0.1, 1000, 3, Inf, nothing))
+│    %71  = Core.tuple(%70)::Core.Const((LineSearches.BackTracking{Float64, Int64}(0.0001, 0.5, 0.1, 1000, 3, Inf, nothing),))
+│    %72  = (%67)(%71)::Core.Const((linesearch = LineSearches.BackTracking{Float64, Int64}(0.0001, 0.5, 0.1, 1000, 3, Inf, nothing),))
+│    %73  = SymbolicRegression.ConstantOptimizationModule.Optim::Core.Const(Optim)
+│    %74  = Base.getproperty(%73, :Newton)::Core.Const(Optim.Newton)
+│           (algorithm = Core.kwcall(%72, %74))
+│    %76  = SymbolicRegression.ConstantOptimizationModule._optimize_constants::Core.Const(SymbolicRegression.ConstantOptimizationModule._optimize_constants)
+│    %77  = x0::Vector{Float32}
+│    %78  = refs::Vector{Base.RefValue{Node{Float32, 2}}}
+│    %79  = SymbolicRegression.ConstantOptimizationModule.specialized_options::Core.Const(SymbolicRegression.CoreModule.OptionsStructModule.specialized_options)
+│    %80  = (%79)(options)::ANY
+│    %81  = algorithm::Core.Const(Optim.Newton{LineSearches.InitialStatic{Float64}, LineSearches.BackTracking{Float64, Int64}}(LineSearches.InitialStatic{Float64}(1.0, false), LineSearches.BackTracking{Float64, Int64}(0.0001, 0.5, 0.1, 1000, 3, Inf, nothing)))
+│    %82  = Base.getproperty(options, :optimizer_options)::OPTIM.OPTIONS
+│    %83  = (%76)(dataset, member, %77, %78, %80, %81, %82, rng)::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}
+│           (@_14 = %83)
+│    %85  = @_14::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}
+│    %86  = (%85 isa %10)::Core.Const(true)
+└───        goto #14 if not %86
+13 ─        goto #15
+14 ─        Core.Const(:(@_14))
+│           Core.Const(:(Base.convert(%10, %89)))
+└───        Core.Const(:(@_14 = Core.typeassert(%90, %10)))
+15 ┄ %92  = @_14::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}
+└───        return %92
+16 ┄ %94  = SymbolicRegression.ConstantOptimizationModule._optimize_constants::Core.Const(SymbolicRegression.ConstantOptimizationModule._optimize_constants)
+│    %95  = x0::Vector{Float32}
+│    %96  = refs::Vector{Base.RefValue{Node{Float32, 2}}}
+│    %97  = SymbolicRegression.ConstantOptimizationModule.specialized_options::Core.Const(SymbolicRegression.CoreModule.OptionsStructModule.specialized_options)
+│    %98  = (%97)(options)::ANY
+│    %99  = Base.getproperty(options, :optimizer_algorithm)::OPTIM.ABSTRACTOPTIMIZER
+│    %100 = Base.getproperty(options, :optimizer_options)::OPTIM.OPTIONS
+│    %101 = (%94)(dataset, member, %95, %96, %98, %99, %100, rng)::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}
+│           (@_15 = %101)
+│    %103 = @_15::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}
+│    %104 = (%103 isa %10)::Core.Const(true)
+└───        goto #18 if not %104
+17 ─        goto #19
+18 ─        Core.Const(:(@_15))
+│           Core.Const(:(Base.convert(%10, %107)))
+└───        Core.Const(:(@_15 = Core.typeassert(%108, %10)))
+19 ┄ %110 = @_15::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}
+└───        return %110
+

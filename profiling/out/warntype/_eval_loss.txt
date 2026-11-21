@@ -1,0 +1,103 @@
+MethodInstance for SymbolicRegression.LossFunctionsModule._eval_loss(::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, ::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, ::Bool, ::Nothing)
+  from _eval_loss(tree::Union{AbstractExpression{T}, AbstractExpressionNode{T}}, dataset::Dataset{T, L}, options::SymbolicRegression.CoreModule.OptionsStructModule.AbstractOptions, regularization::Bool, eval_context) where {T, L<:Real} @ SymbolicRegression.LossFunctionsModule ~/.julia/packages/SymbolicRegression/g1JuB/src/LossFunctions.jl:116
+Static Parameters
+  T = Float32
+  L = Float32
+Arguments
+  #self#::Core.Const(SymbolicRegression.LossFunctionsModule._eval_loss)
+  tree::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+  dataset::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+  regularization::Bool
+  eval_context::Core.Const(nothing)
+Locals
+  @_7::Int64
+  loss_val::ANY
+  completion::Bool
+  prediction::UNION{NOTHING, VECTOR{FLOAT32}}
+  @_11::Float32
+  @_12::ANY
+  @_13::ANY
+Body::Float32
+1 ──       Core.NewvarNode(:(@_7))
+│          Core.NewvarNode(:(loss_val))
+│          Core.NewvarNode(:(completion))
+│          Core.NewvarNode(:(prediction))
+│    %5  = $(Expr(:static_parameter, 2))::Core.Const(Float32)
+│    %6  = SymbolicRegression.LossFunctionsModule.:(===)::Core.Const(===)
+│    %7  = SymbolicRegression.LossFunctionsModule.nothing::Core.Const(nothing)
+│    %8  = (%6)(eval_context, %7)::Core.Const(true)
+└───       goto #3 if not %8
+2 ──       goto #4
+3 ──       Core.Const(:(SymbolicRegression.LossFunctionsModule.reset_index!))
+│          Core.Const(:(Base.getproperty(eval_context, :buffer)))
+└───       Core.Const(:((%11)(%12)))
+4 ┄─ %14 = SymbolicRegression.LossFunctionsModule.eval_tree_dispatch::Core.Const(SymbolicRegression.LossFunctionsModule.eval_tree_dispatch)
+│    %15 = (%14)(tree, dataset, options, eval_context)::UNION{TUPLE{NOTHING, BOOL}, TUPLE{VECTOR{FLOAT32}, BOOL}}
+│    %16 = Base.indexed_iterate(%15, 1)::UNION{TUPLE{NOTHING, INT64}, TUPLE{VECTOR{FLOAT32}, INT64}}
+│          (prediction = Core.getfield(%16, 1))
+│          (@_7 = Core.getfield(%16, 2))
+│    %19 = @_7::Int64
+│    %20 = Base.indexed_iterate(%15, 2, %19)::Core.PartialStruct(Tuple{Bool, Int64}, Union{Nothing, Bool}[0, 0], Any[Bool, Core.Const(3)])
+│          (completion = Core.getfield(%20, 1))
+│    %22 = SymbolicRegression.LossFunctionsModule.:!::Core.Const(!)
+│    %23 = completion::Bool
+│    %24 = (%22)(%23)::Bool
+└───       goto #6 if not %24
+5 ──       goto #7
+6 ── %27 = SymbolicRegression.LossFunctionsModule.isnothing::Core.Const(isnothing)
+│    %28 = prediction::UNION{NOTHING, VECTOR{FLOAT32}}
+│    %29 = (%27)(%28)::Bool
+└───       goto #11 if not %29
+7 ┄─ %31 = $(Expr(:static_parameter, 2))::Core.Const(Float32)
+│    %32 = SymbolicRegression.LossFunctionsModule.Inf::Core.Const(Inf)
+│    %33 = (%31)(%32)::Core.Const(Inf32)
+│          (@_11 = %33)
+│    %35 = @_11::Core.Const(Inf32)
+│    %36 = (%35 isa %5)::Core.Const(true)
+└───       goto #9 if not %36
+8 ──       goto #10
+9 ──       Core.Const(:(@_11))
+│          Core.Const(:(Base.convert(%5, %39)))
+└───       Core.Const(:(@_11 = Core.typeassert(%40, %5)))
+10 ┄ %42 = @_11::Core.Const(Inf32)
+└───       return %42
+11 ─ %44 = SymbolicRegression.LossFunctionsModule.is_weighted::Core.Const(SymbolicRegression.CoreModule.DatasetModule.is_weighted)
+│    %45 = (%44)(dataset)::Core.Const(false)
+└───       goto #13 if not %45
+12 ─       Core.Const(:(SymbolicRegression.LossFunctionsModule._weighted_loss))
+│          Core.Const(:(prediction))
+│          Core.Const(:(Base.getproperty(dataset, :y)))
+│          Core.Const(:(SymbolicRegression.LossFunctionsModule.AbstractArray))
+│          Core.Const(:(Core.typeassert(%49, %50)))
+│          Core.Const(:(Base.getproperty(dataset, :weights)))
+│          Core.Const(:(Base.getproperty(options, :elementwise_loss)))
+│          Core.Const(:(@_12 = (%47)(%48, %51, %52, %53)))
+└───       Core.Const(:(goto %63))
+13 ┄ %56 = SymbolicRegression.LossFunctionsModule._loss::Core.Const(SymbolicRegression.LossFunctionsModule._loss)
+│    %57 = prediction::Vector{Float32}
+│    %58 = Base.getproperty(dataset, :y)::Vector{Float32}
+│    %59 = SymbolicRegression.LossFunctionsModule.AbstractArray::Core.Const(AbstractArray)
+│    %60 = Core.typeassert(%58, %59)::Vector{Float32}
+│    %61 = Base.getproperty(options, :elementwise_loss)::UNION{FUNCTION, SUPERVISEDLOSS}
+│          (@_12 = (%56)(%57, %60, %61))
+│    %63 = @_12::ANY
+│          (loss_val = %63)
+└───       goto #15 if not regularization
+14 ─ %66 = SymbolicRegression.LossFunctionsModule.:+::Core.Const(+)
+│    %67 = loss_val::ANY
+│    %68 = SymbolicRegression.LossFunctionsModule.dimensional_regularization::Core.Const(SymbolicRegression.LossFunctionsModule.dimensional_regularization)
+│    %69 = (%68)(tree, dataset, options)::Core.Const(0.0f0)
+└───       (loss_val = (%66)(%67, %69))
+15 ┄ %71 = loss_val::ANY
+│          (@_13 = %71)
+│    %73 = @_13::ANY
+│    %74 = (%73 isa %5)::Bool
+└───       goto #17 if not %74
+16 ─       goto #18
+17 ─ %77 = @_13::ANY
+│    %78 = Base.convert(%5, %77)::ANY
+└───       (@_13 = Core.typeassert(%78, %5))
+18 ┄ %80 = @_13::Float32
+└───       return %80
+

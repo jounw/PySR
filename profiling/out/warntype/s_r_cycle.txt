@@ -1,0 +1,129 @@
+MethodInstance for SymbolicRegression.SingleIterationModule.var"#s_r_cycle#1"(::Int64, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, ::Nothing, ::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, ::typeof(s_r_cycle), ::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, ::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, ::Int64, ::Int64)
+  from var"#s_r_cycle#1"(verbosity::Int64, options::SymbolicRegression.CoreModule.OptionsStructModule.AbstractOptions, trace::Union{Nothing, Dict{String, Any}}, plugin_states::Tuple, ::typeof(s_r_cycle), dataset::D, pop::P, ncycles::Int64, curmaxsize::Int64) where {T, L, D<:Dataset{T, L}, N<:(AbstractExpression{T}), P<:(Population{T, L, N, PM} where PM<:AbstractPopMember{T, L, N})} @ SymbolicRegression.SingleIterationModule ~/.julia/packages/SymbolicRegression/g1JuB/src/SingleIteration.jl:25
+Static Parameters
+  T = Float32
+  L = Float32
+  D = SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  N = Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+  P = Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+Arguments
+  #s_r_cycle#1::Core.Const(SymbolicRegression.SingleIterationModule.var"#s_r_cycle#1")
+  verbosity::Int64
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+  trace::Core.Const(nothing)
+  plugin_states::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}
+  @_6::Core.Const(SymbolicRegression.SingleIterationModule.s_r_cycle)
+  dataset::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  pop@_8::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  ncycles::Int64
+  curmaxsize::Int64
+Locals
+  @_11::UNION{NOTHING, TUPLE{INT64, INT64}}
+  eval_context::EvalContext{false, false, true, DynamicExpressions.EvaluateModule.ArrayBuffer{Vector{Vector{Float32}}, Base.RefValue{Int64}}, true}
+  batched_dataset::UNION{SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.SUBDATASET{FLOAT32, FLOAT32, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, VECTOR{INT64}}}
+  num_evals::Float64
+  best_examples_seen::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  @_16::Int64
+  cycle_idx::Int64
+  tmp_num_evals::Float64
+  pop@_19::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  @_20::UNION{SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.SUBDATASET{FLOAT32, FLOAT32, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, VECTOR{INT64}}}
+  @_21::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+Body::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+1 ──       nothing
+│          (pop@_19 = pop@_8)
+│          Core.NewvarNode(:(@_11))
+│          Core.NewvarNode(:(eval_context))
+│          Core.NewvarNode(:(batched_dataset))
+│    %6  = SymbolicRegression.SingleIterationModule.Tuple::Core.Const(Tuple)
+│    %7  = $(Expr(:static_parameter, 5))::Core.Const(Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}})
+│    %8  = SymbolicRegression.SingleIterationModule.HallOfFame::Core.Const(HallOfFame)
+│    %9  = $(Expr(:static_parameter, 1))::Core.Const(Float32)
+│    %10 = $(Expr(:static_parameter, 2))::Core.Const(Float32)
+│    %11 = $(Expr(:static_parameter, 4))::Core.Const(Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}})
+│    %12 = Core.apply_type(%8, %9, %10, %11)::Core.Const(HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PM} where PM<:SymbolicRegression.PopMemberModule.AbstractPopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}})
+│    %13 = SymbolicRegression.SingleIterationModule.Float64::Core.Const(Float64)
+│    %14 = Core.apply_type(%6, %7, %12, %13)::Core.Const(Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PM} where PM<:SymbolicRegression.PopMemberModule.AbstractPopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64})
+│    %15 = SymbolicRegression.SingleIterationModule.HallOfFame::Core.Const(HallOfFame)
+│          (best_examples_seen = (%15)(options, dataset))
+│          (num_evals = 0.0)
+│    %18 = SymbolicRegression.SingleIterationModule.batching_required::Core.Const(SymbolicRegression.CoreModule.OptionsStructModule.batching_required)
+│    %19 = (%18)(options, dataset)::Bool
+└───       goto #3 if not %19
+2 ── %21 = SymbolicRegression.SingleIterationModule.batch::Core.Const(SymbolicRegression.CoreModule.DatasetModule.batch)
+│    %22 = SymbolicRegression.SingleIterationModule.get_batch_size::Core.Const(SymbolicRegression.CoreModule.OptionsStructModule.get_batch_size)
+│    %23 = Base.getproperty(dataset, :n)::Int64
+│    %24 = (%22)(options, %23)::Int64
+│          (@_20 = (%21)(dataset, %24))
+└───       goto #4
+3 ── %27 = dataset::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+└───       (@_20 = %27)
+4 ┄─ %29 = @_20::UNION{SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.SUBDATASET{FLOAT32, FLOAT32, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, VECTOR{INT64}}}
+│          (batched_dataset = %29)
+│    %31 = SymbolicRegression.SingleIterationModule.create_eval_context::Core.Const(SymbolicRegression.LossFunctionsModule.create_eval_context)
+│    %32 = batched_dataset::UNION{SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.SUBDATASET{FLOAT32, FLOAT32, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, VECTOR{INT64}}}
+│          (eval_context = (%31)(%32, options, curmaxsize))
+│    %34 = SymbolicRegression.SingleIterationModule.:(:)::Core.Const(Colon())
+│    %35 = (%34)(1, ncycles)::Core.PartialStruct(UnitRange{Int64}, Union{Nothing, Bool}[0, 0], Any[Core.Const(1), Int64])
+│          (@_11 = Base.iterate(%35))
+│    %37 = @_11::UNION{NOTHING, TUPLE{INT64, INT64}}
+│    %38 = (%37 === nothing)::Bool
+│    %39 = Base.not_int(%38)::Bool
+└───       goto #7 if not %39
+5 ┄─ %41 = @_11::Tuple{Int64, Int64}
+│          (cycle_idx = Core.getfield(%41, 1))
+│    %43 = Core.getfield(%41, 2)::Int64
+│    %44 = SymbolicRegression.SingleIterationModule._on_cycle_start!::Core.Const(SymbolicRegression.SingleIterationModule._on_cycle_start!)
+│    %45 = cycle_idx::Int64
+│          (%44)(plugin_states, %45, ncycles, options)
+│    %47 = (:plugin_states, :best_seen, :eval_context)::Core.Const((:plugin_states, :best_seen, :eval_context))
+│    %48 = Core.apply_type(Core.NamedTuple, %47)::Core.Const(NamedTuple{(:plugin_states, :best_seen, :eval_context)})
+│    %49 = best_examples_seen::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %50 = eval_context::Core.PartialStruct(EvalContext{false, false, true, DynamicExpressions.EvaluateModule.ArrayBuffer{Vector{Vector{Float32}}, Base.RefValue{Int64}}, true}, Union{Nothing, Bool}[0, 0, 0, 0, 0], Any[Core.Const(Val{false}()), Core.Const(Val{false}()), Core.Const(Val{true}()), Core.PartialStruct(DynamicExpressions.EvaluateModule.ArrayBuffer{Vector{Vector{Float32}}, Base.RefValue{Int64}}, Union{Nothing, Bool}[0, 0], Any[Vector{Vector{Float32}}, Core.PartialStruct(Base.RefValue{Int64}, Union{Nothing, Bool}[0], Any[Int64])]), Core.Const(Val{true}())])
+│    %51 = Core.tuple(plugin_states, %49, %50)::Core.PartialStruct(Tuple{Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, EvalContext{false, false, true, DynamicExpressions.EvaluateModule.ArrayBuffer{Vector{Vector{Float32}}, Base.RefValue{Int64}}, true}}, Union{Nothing, Bool}[0, 0, 0], Any[Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Core.PartialStruct(EvalContext{false, false, true, DynamicExpressions.EvaluateModule.ArrayBuffer{Vector{Vector{Float32}}, Base.RefValue{Int64}}, true}, Union{Nothing, Bool}[0, 0, 0, 0, 0], Any[Core.Const(Val{false}()), Core.Const(Val{false}()), Core.Const(Val{true}()), Core.PartialStruct(DynamicExpressions.EvaluateModule.ArrayBuffer{Vector{Vector{Float32}}, Base.RefValue{Int64}}, Union{Nothing, Bool}[0, 0], Any[Vector{Vector{Float32}}, Core.PartialStruct(Base.RefValue{Int64}, Union{Nothing, Bool}[0], Any[Int64])]), Core.Const(Val{true}())])])
+│    %52 = (%48)(%51)::Core.PartialStruct(@NamedTuple{plugin_states::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, best_seen::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, eval_context::EvalContext{false, false, true, DynamicExpressions.EvaluateModule.ArrayBuffer{Vector{Vector{Float32}}, Base.RefValue{Int64}}, true}}, Union{Nothing, Bool}[0, 0, 0], Any[Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Core.PartialStruct(EvalContext{false, false, true, DynamicExpressions.EvaluateModule.ArrayBuffer{Vector{Vector{Float32}}, Base.RefValue{Int64}}, true}, Union{Nothing, Bool}[0, 0, 0, 0, 0], Any[Core.Const(Val{false}()), Core.Const(Val{false}()), Core.Const(Val{true}()), Core.PartialStruct(DynamicExpressions.EvaluateModule.ArrayBuffer{Vector{Vector{Float32}}, Base.RefValue{Int64}}, Union{Nothing, Bool}[0, 0], Any[Vector{Vector{Float32}}, Core.PartialStruct(Base.RefValue{Int64}, Union{Nothing, Bool}[0], Any[Int64])]), Core.Const(Val{true}())])])
+│    %53 = SymbolicRegression.SingleIterationModule.reg_evol_cycle::Core.Const(SymbolicRegression.RegularizedEvolutionModule.reg_evol_cycle)
+│    %54 = batched_dataset::UNION{SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.SUBDATASET{FLOAT32, FLOAT32, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, VECTOR{INT64}}}
+│    %55 = pop@_19::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %56 = Core.kwcall(%52, %53, %54, %55, curmaxsize, options, trace)::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+│    %57 = Base.indexed_iterate(%56, 1)::Core.PartialStruct(Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Int64}, Union{Nothing, Bool}[0, 0], Any[Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Core.Const(2)])
+│          (pop@_19 = Core.getfield(%57, 1))
+│          (@_16 = Core.getfield(%57, 2))
+│    %60 = @_16::Core.Const(2)
+│    %61 = Base.indexed_iterate(%56, 2, %60)::Core.PartialStruct(Tuple{Float64, Int64}, Union{Nothing, Bool}[0, 0], Any[Float64, Core.Const(3)])
+│          (tmp_num_evals = Core.getfield(%61, 1))
+│    %63 = SymbolicRegression.SingleIterationModule.:+::Core.Const(+)
+│    %64 = num_evals::Float64
+│    %65 = tmp_num_evals::Float64
+│          (num_evals = (%63)(%64, %65))
+│    %67 = SymbolicRegression.SingleIterationModule._update_hall_of_fame_unchecked!::Core.Const(SymbolicRegression.HallOfFameModule._update_hall_of_fame_unchecked!)
+│    %68 = best_examples_seen::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %69 = pop@_19::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %70 = Base.getproperty(%69, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│          (%67)(%68, %70, options)
+│    %72 = SymbolicRegression.SingleIterationModule._on_cycle_end!::Core.Const(SymbolicRegression.SingleIterationModule._on_cycle_end!)
+│    %73 = pop@_19::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %74 = batched_dataset::UNION{SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.SUBDATASET{FLOAT32, FLOAT32, SYMBOLICREGRESSION.COREMODULE.DATASETMODULE.BASICDATASET{FLOAT32, FLOAT32, MATRIX{FLOAT32}, VECTOR{FLOAT32}, NOTHING, @NAMEDTUPLE{}, NOTHING, NOTHING, NOTHING, NOTHING}, VECTOR{INT64}}}
+│    %75 = best_examples_seen::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│          (%72)(plugin_states, %73, %74, %75, options)
+│          (@_11 = Base.iterate(%35, %43))
+│    %78 = @_11::UNION{NOTHING, TUPLE{INT64, INT64}}
+│    %79 = (%78 === nothing)::Bool
+│    %80 = Base.not_int(%79)::Bool
+└───       goto #7 if not %80
+6 ──       goto #5
+7 ┄─ %83 = pop@_19::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %84 = best_examples_seen::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %85 = num_evals::Float64
+│    %86 = Core.tuple(%83, %84, %85)::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+│          (@_21 = %86)
+│    %88 = @_21::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+│    %89 = (%88 isa %14)::Core.Const(true)
+└───       goto #9 if not %89
+8 ──       goto #10
+9 ──       Core.Const(:(@_21))
+│          Core.Const(:(Base.convert(%14, %92)))
+└───       Core.Const(:(@_21 = Core.typeassert(%93, %14)))
+10 ┄ %95 = @_21::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+└───       return %95
+

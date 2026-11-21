@@ -1,0 +1,32 @@
+MethodInstance for SymbolicRegression.HallOfFameModule.update_hall_of_fame!(::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, ::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing})
+  from update_hall_of_fame!(hall_of_fame::HallOfFame, members::AbstractVector{<:SymbolicRegression.PopMemberModule.AbstractPopMember}, options::SymbolicRegression.CoreModule.OptionsStructModule.AbstractOptions) @ SymbolicRegression.HallOfFameModule ~/.julia/packages/SymbolicRegression/g1JuB/src/HallOfFame.jl:149
+Arguments
+  #self#::Core.Const(SymbolicRegression.HallOfFameModule.update_hall_of_fame!)
+  hall_of_fame::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  members::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+Locals
+  @_5::UNION{NOTHING, TUPLE{POPMEMBER{FLOAT32, FLOAT32, EXPRESSION{FLOAT32, NODE{FLOAT32, 2}, @NAMEDTUPLE{OPERATORS::NOTHING, VARIABLE_NAMES::NOTHING}}}, INT64}}
+  member::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+Body::Nothing
+1 ─ %1  = members::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│         (@_5 = Base.iterate(%1))
+│   %3  = @_5::UNION{NOTHING, TUPLE{POPMEMBER{FLOAT32, FLOAT32, EXPRESSION{FLOAT32, NODE{FLOAT32, 2}, @NAMEDTUPLE{OPERATORS::NOTHING, VARIABLE_NAMES::NOTHING}}}, INT64}}
+│   %4  = (%3 === nothing)::Bool
+│   %5  = Base.not_int(%4)::Bool
+└──       goto #4 if not %5
+2 ┄ %7  = @_5::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Int64}
+│         (member = Core.getfield(%7, 1))
+│   %9  = Core.getfield(%7, 2)::Int64
+│   %10 = SymbolicRegression.HallOfFameModule.update_hall_of_fame!::Core.Const(SymbolicRegression.HallOfFameModule.update_hall_of_fame!)
+│   %11 = member::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│         (%10)(hall_of_fame, %11, options)
+│         (@_5 = Base.iterate(%1, %9))
+│   %14 = @_5::UNION{NOTHING, TUPLE{POPMEMBER{FLOAT32, FLOAT32, EXPRESSION{FLOAT32, NODE{FLOAT32, 2}, @NAMEDTUPLE{OPERATORS::NOTHING, VARIABLE_NAMES::NOTHING}}}, INT64}}
+│   %15 = (%14 === nothing)::Bool
+│   %16 = Base.not_int(%15)::Bool
+└──       goto #4 if not %16
+3 ─       goto #2
+4 ┄ %19 = SymbolicRegression.HallOfFameModule.nothing::Core.Const(nothing)
+└──       return %19
+

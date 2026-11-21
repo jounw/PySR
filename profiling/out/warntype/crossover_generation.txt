@@ -1,0 +1,67 @@
+MethodInstance for SymbolicRegression.CrossoverModule.var"#crossover_generation#5"(::Nothing, ::Nothing, ::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, ::typeof(SymbolicRegression.CrossoverModule.crossover_generation), ::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, ::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, ::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, ::Int64, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing})
+  from var"#crossover_generation#5"(trace::Union{Nothing, Dict{String, Any}}, eval_context, plugin_states::Tuple, ::typeof(SymbolicRegression.CrossoverModule.crossover_generation), member1::P, member2::P, dataset::D, curmaxsize::Int64, options::SymbolicRegression.CoreModule.OptionsStructModule.AbstractOptions) where {T, L, D<:Dataset{T, L}, N, P<:AbstractPopMember{T, L, N}} @ SymbolicRegression.CrossoverModule ~/.julia/packages/SymbolicRegression/g1JuB/src/Crossover.jl:110
+Static Parameters
+  T = Float32
+  L = Float32
+  D = SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  N = Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+  P = PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+Arguments
+  #crossover_generation#5::Core.Const(SymbolicRegression.CrossoverModule.var"#crossover_generation#5")
+  trace::Core.Const(nothing)
+  eval_context::Core.Const(nothing)
+  plugin_states::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}
+  @_5::Core.Const(SymbolicRegression.CrossoverModule.crossover_generation)
+  member1::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  member2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  dataset::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  curmaxsize::Int64
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+Locals
+  crossover_choice::ABSTRACTCROSSOVER
+  crossovers::Vector{Pair{AbstractCrossover, Float64}}
+  @_13::ABSTRACTCROSSOVER
+  @_14::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}
+Body::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}
+1 ─       nothing
+│         Core.NewvarNode(:(crossover_choice))
+│   %3  = SymbolicRegression.CrossoverModule.Tuple::Core.Const(Tuple)
+│   %4  = $(Expr(:static_parameter, 5))::Core.Const(PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}})
+│   %5  = $(Expr(:static_parameter, 5))::Core.Const(PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}})
+│   %6  = SymbolicRegression.CrossoverModule.Bool::Core.Const(Bool)
+│   %7  = SymbolicRegression.CrossoverModule.Float64::Core.Const(Float64)
+│   %8  = Core.apply_type(%3, %4, %5, %6, %7)::Core.Const(Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64})
+│         (crossovers = Base.getproperty(options, :crossovers))
+│   %10 = SymbolicRegression.CrossoverModule.:(==)::Core.Const(==)
+│   %11 = SymbolicRegression.CrossoverModule.length::Core.Const(length)
+│   %12 = crossovers::Vector{Pair{AbstractCrossover, Float64}}
+│   %13 = (%11)(%12)::Int64
+│   %14 = (%10)(%13, 1)::Bool
+└──       goto #3 if not %14
+2 ─ %16 = SymbolicRegression.CrossoverModule.first::Core.Const(first)
+│   %17 = crossovers::Vector{Pair{AbstractCrossover, Float64}}
+│   %18 = (%16)(%17)::Pair{AbstractCrossover, Float64}
+│         (@_13 = Base.getproperty(%18, :first))
+└──       goto #4
+3 ─ %21 = crossovers::Vector{Pair{AbstractCrossover, Float64}}
+│   %22 = SymbolicRegression.CrossoverModule._sample_mutation::Core.Const(SymbolicRegression.MutateModule._sample_mutation)
+│   %23 = crossovers::Vector{Pair{AbstractCrossover, Float64}}
+│   %24 = (%22)(%23)::Int64
+│   %25 = Base.getindex(%21, %24)::Pair{AbstractCrossover, Float64}
+└──       (@_13 = Base.getproperty(%25, :first))
+4 ┄ %27 = @_13::ABSTRACTCROSSOVER
+│         (crossover_choice = %27)
+│   %29 = SymbolicRegression.CrossoverModule._dispatch_crossover_generation::Core.Const(SymbolicRegression.CrossoverModule._dispatch_crossover_generation)
+│   %30 = crossover_choice::ABSTRACTCROSSOVER
+│   %31 = (%29)(%30, member1, member2, dataset, curmaxsize, options, trace, eval_context, plugin_states)::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}
+│         (@_14 = %31)
+│   %33 = @_14::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}
+│   %34 = (%33 isa %8)::Core.Const(true)
+└──       goto #6 if not %34
+5 ─       goto #7
+6 ─       Core.Const(:(@_14))
+│         Core.Const(:(Base.convert(%8, %37)))
+└──       Core.Const(:(@_14 = Core.typeassert(%38, %8)))
+7 ┄ %40 = @_14::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}
+└──       return %40
+

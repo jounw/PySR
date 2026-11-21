@@ -1,0 +1,28 @@
+MethodInstance for DynamicExpressions.ExpressionModule.var"#eval_tree_array#14"(::Base.Pairs{Symbol, EvalContext{false, false, true, Nothing, true}, Nothing, @NamedTuple{eval_context::EvalContext{false, false, true, Nothing, true}}}, ::typeof(eval_tree_array), ::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, ::Matrix{Float32}, ::OperatorEnum{Tuple{Tuple{typeof(cos), typeof(exp), typeof(sin)}, Tuple{typeof(+), typeof(*), typeof(-), typeof(/)}}})
+  from var"#eval_tree_array#14"(kws::Base.Pairs{Symbol, V, Nothing, NT} where {V, NT<:NamedTuple}, ::typeof(eval_tree_array), ex::AbstractExpression, cX::AbstractMatrix, operators::Union{Nothing, DynamicExpressions.OperatorEnumModule.AbstractOperatorEnum}) @ DynamicExpressions.ExpressionModule ~/.julia/packages/DynamicExpressions/Ah0kD/src/Expression.jl:435
+Arguments
+  #eval_tree_array#14::Core.Const(DynamicExpressions.ExpressionModule.var"#eval_tree_array#14")
+  kws::Core.Const(Base.Pairs(:eval_context => EvalContext{false, false, true, Nothing, true}(Val{false}(), Val{false}(), Val{true}(), nothing, Val{true}())))
+  @_3::Core.Const(DynamicExpressions.EvaluateModule.eval_tree_array)
+  ex::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+  cX::Matrix{Float32}
+  operators::Core.Const(OperatorEnum{Tuple{Tuple{typeof(cos), typeof(exp), typeof(sin)}, Tuple{typeof(+), typeof(*), typeof(-), typeof(/)}}}(((cos, exp, sin), (+, *, -, /))))
+Body::Tuple{Vector{Float32}, Bool}
+1 ─       nothing
+│   %2  = DynamicExpressions.ExpressionModule._validate_input::Core.Const(DynamicExpressions.ExpressionModule._validate_input)
+│         (%2)(ex, cX, operators)
+│   %4  = DynamicExpressions.ExpressionModule.get_tree::Core.Const(DynamicExpressions.ExpressionModule.get_tree)
+│   %5  = (%4)(ex)::Node{Float32, 2}
+│   %6  = DynamicExpressions.ExpressionModule.get_operators::Core.Const(DynamicExpressions.ExpressionModule.get_operators)
+│   %7  = (%6)(ex, operators)::Core.Const(OperatorEnum{Tuple{Tuple{typeof(cos), typeof(exp), typeof(sin)}, Tuple{typeof(+), typeof(*), typeof(-), typeof(/)}}}(((cos, exp, sin), (+, *, -, /))))
+│   %8  = Base.NamedTuple()::Core.Const(NamedTuple())
+│   %9  = Base.merge(%8, kws)::Core.Const((eval_context = EvalContext{false, false, true, Nothing, true}(Val{false}(), Val{false}(), Val{true}(), nothing, Val{true}()),))
+│   %10 = Base.isempty(%9)::Core.Const(false)
+└──       goto #3 if not %10
+2 ─       Core.Const(:(DynamicExpressions.ExpressionModule.eval_tree_array))
+│         Core.Const(:((%12)(%5, cX, %7)))
+└──       Core.Const(:(return %13))
+3 ┄ %15 = DynamicExpressions.ExpressionModule.eval_tree_array::Core.Const(DynamicExpressions.EvaluateModule.eval_tree_array)
+│   %16 = Core.kwcall(%9, %15, %5, cX, %7)::Tuple{Vector{Float32}, Bool}
+└──       return %16
+

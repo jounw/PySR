@@ -1,0 +1,13 @@
+MethodInstance for SymbolicRegression.ComplexityModule.compute_complexity(::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing})
+  from compute_complexity(tree::AbstractExpression, options::SymbolicRegression.CoreModule.OptionsStructModule.AbstractOptions; break_sharing) @ SymbolicRegression.ComplexityModule ~/.julia/packages/SymbolicRegression/g1JuB/src/Complexity.jl:20
+Arguments
+  #self#::Core.Const(SymbolicRegression.ComplexityModule.compute_complexity)
+  tree::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+Body::Int64
+1 ─ %1 = SymbolicRegression.ComplexityModule.:(var"#compute_complexity#1")::Core.Const(SymbolicRegression.ComplexityModule.var"#compute_complexity#1")
+│   %2 = SymbolicRegression.ComplexityModule.Val::Core.Const(Val)
+│   %3 = (%2)(false)::Core.Const(Val{false}())
+│   %4 = (%1)(%3, #self#, tree, options)::Int64
+└──      return %4
+

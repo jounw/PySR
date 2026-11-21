@@ -1,0 +1,32 @@
+MethodInstance for SymbolicRegression.PopulationModule.var"#best_of_sample#4"(::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, ::typeof(best_of_sample), ::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing})
+  from var"#best_of_sample#4"(plugin_states::Tuple, ::typeof(best_of_sample), pop::Population{T, L, N, PM} where PM<:SymbolicRegression.PopMemberModule.AbstractPopMember{T, L, N}, options::SymbolicRegression.CoreModule.OptionsStructModule.AbstractOptions) where {T, L, N} @ SymbolicRegression.PopulationModule ~/.julia/packages/SymbolicRegression/g1JuB/src/Population.jl:176
+Static Parameters
+  T = Float32
+  L = Float32
+  N = Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+Arguments
+  #best_of_sample#4::Core.Const(SymbolicRegression.PopulationModule.var"#best_of_sample#4")
+  plugin_states::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}
+  @_3::Core.Const(SymbolicRegression.PopulationModule.best_of_sample)
+  pop::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+Locals
+  idxs::Vector{Int64}
+Body::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+1 ─       nothing
+│   %2  = SymbolicRegression.PopulationModule._sample_indices!::Core.Const(SymbolicRegression.PopulationModule._sample_indices!)
+│   %3  = SymbolicRegression.PopulationModule.TOURNAMENT_INDICES_SCRATCH::Core.Const(SymbolicRegression.UtilsModule.PerTaskCache{Vector{Int64}, SymbolicRegression.UtilsModule.var"#12#13"{Vector{Int64}}}(SymbolicRegression.UtilsModule.var"#12#13"{Vector{Int64}}()))
+│   %4  = Base.getindex(%3)::Vector{Int64}
+│   %5  = Base.getproperty(pop, :n)::Int64
+│   %6  = Base.getproperty(options, :tournament_selection_n)::Int64
+│         (idxs = (%2)(%4, %5, %6))
+│   %8  = (:plugin_states,)::Core.Const((:plugin_states,))
+│   %9  = Core.apply_type(Core.NamedTuple, %8)::Core.Const(NamedTuple{(:plugin_states,)})
+│   %10 = Core.tuple(plugin_states)::Tuple{Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}}
+│   %11 = (%9)(%10)::@NamedTuple{plugin_states::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}}
+│   %12 = SymbolicRegression.PopulationModule._best_of_sample::Core.Const(SymbolicRegression.PopulationModule._best_of_sample)
+│   %13 = Base.getproperty(pop, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│   %14 = idxs::Vector{Int64}
+│   %15 = Core.kwcall(%11, %12, %13, %14, options)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+└──       return %15
+

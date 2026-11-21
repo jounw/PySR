@@ -1,0 +1,44 @@
+--- optimized IR, sr_eval(ex, X, options) ---
+1-element Vector{Any}:
+ CodeInfo(
+1 ─ %1 =    invoke SymbolicRegression.InterfaceDynamicExpressionsModule.:(var"#eval_tree_array#1")(SymbolicRegression.InterfaceDynamicExpressionsModule.nothing::Nothing, SymbolicRegression.InterfaceDynamicExpressionsModule.nothing::Nothing, SymbolicRegression.InterfaceDynamicExpressionsModule.nothing::Nothing, Base.Pairs{Symbol, Union{}, Nothing, @NamedTuple{}}()::Base.Pairs{Symbol, Union{}, Nothing, @NamedTuple{}}, Main.eval_tree_array::typeof(eval_tree_array), ex::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, X::Matrix{Float32}, options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing})::Union{Tuple{Nothing, Bool}, Tuple{Vector{Float32}, Bool}}
+└──      return %1
+) => Union{Tuple{Nothing, Bool}, Tuple{Vector{Float32}, Bool}}
+
+--- @code_warntype ---
+MethodInstance for sr_eval(::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, ::Matrix{Float32}, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing})
+  from sr_eval(ex, X, options) @ Main ~/Developer/pysr/profiling/warntype_sr_eval.jl:14
+Arguments
+  #self#::Core.Const(Main.sr_eval)
+  ex::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+  X::Matrix{Float32}
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+Body::UNION{TUPLE{NOTHING, BOOL}, TUPLE{VECTOR{FLOAT32}, BOOL}}
+1 ─      nothing
+│   %2 = Main.eval_tree_array::Core.Const(DynamicExpressions.EvaluateModule.eval_tree_array)
+│   %3 = (%2)(ex, X, options)::UNION{TUPLE{NOTHING, BOOL}, TUPLE{VECTOR{FLOAT32}, BOOL}}
+└──      return %3
+
+
+options.operators field type: OperatorEnum
+elementwise_loss field type: Union{Function, SupervisedLoss}
+abstract Options field: operators::OperatorEnum
+abstract Options field: elementwise_loss::Union{Function, SupervisedLoss}
+abstract Options field: loss_function::Union{Nothing, Function}
+abstract Options field: loss_function_expression::Union{Nothing, Function}
+abstract Options field: node_type::Type{Node{_A, 2} where _A}
+abstract Options field: expression_type::Type{Expression}
+abstract Options field: optimizer_algorithm::Optim.AbstractOptimizer
+abstract Options field: optimizer_options::Optim.Options
+abstract Options field: early_stop_condition::Union{Nothing, Function}
+abstract Options field: input_stream::IO
+abstract Options field: popmember_type::Type{PopMember}
+
+--- SR wrapper body: #eval_tree_array#1 ---
+return type: Union{Tuple{Nothing, Bool}, Tuple{Vector{Float32}, Bool}}
+runtime dispatch %11::Tuple{Any, Any}  <=  :(Core.kwcall((eval_context = EvalContext{false, false, true, Nothing, true}(Val{false}(), Val{false}(), Val{true}(), nothing, Val{true}()),), DynamicExpressions.EvaluateModule.eval_tree_array, _7, _8, %1))
+non-concrete %1::OperatorEnum  <=  :(Base.getfield(_9, :operators))
+non-concrete %3::Any  <=  :((Core._svec_ref)(%2, 1))
+non-concrete %11::Tuple{Any, Any}  <=  :(Core.kwcall((eval_context = EvalContext{false, false, true, Nothing, true}(Val{false}(), Val{false}(), Val{true}(), nothing, Val{true}()),), DynamicExpressions.EvaluateModule.eval_tree_array, _7, _8
+non-concrete %12::Any  <=  :(Base.getfield(%11, 1))
+non-concrete %13::Any  <=  :(Base.getfield(%11, 2))

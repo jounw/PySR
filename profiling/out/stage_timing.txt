@@ -1,0 +1,48 @@
+{
+  "import_pysr_s": 6.5984809170040535,
+  "fits": [
+    {
+      "_setup_equation_file": 0.02037666700198315,
+      "_validate_and_modify_params": 1.6542006051167846e-05,
+      "_validate_and_set_fit_params": 0.0035504170082276687,
+      "_pre_transform_training_data": 1.0410003596916795e-06,
+      "jl_serialize": 0.2507359169831034,
+      "get_hof": 0.02011070799198933,
+      "_run": 40.792574082996,
+      "_run: options build + equation_search": 40.521727458020905,
+      "fit_total": 40.81683537500794,
+      "sympy+predict": 0.038867334005772136,
+      "best_loss": 3.0427317e-14,
+      "n_equations": 12
+    },
+    {
+      "_setup_equation_file": 0.0003909579972969368,
+      "_validate_and_modify_params": 1.2582997442223132e-05,
+      "_validate_and_set_fit_params": 0.00012020900612697005,
+      "_pre_transform_training_data": 9.57996235229075e-07,
+      "jl_serialize": 0.02323791600065306,
+      "get_hof": 0.008569165991502814,
+      "_run": 37.568956834002165,
+      "_run: options build + equation_search": 37.53714975201001,
+      "fit_total": 37.569641249996494,
+      "sympy+predict": 0.00573712500045076,
+      "best_loss": 3.0427317e-14,
+      "n_equations": 12
+    },
+    {
+      "_setup_equation_file": 0.0004167500010225922,
+      "_validate_and_modify_params": 1.1124997399747372e-05,
+      "_validate_and_set_fit_params": 0.00010320800356566906,
+      "_pre_transform_training_data": 6.249902071431279e-07,
+      "jl_serialize": 0.025416875010705553,
+      "get_hof": 0.009044333011843264,
+      "_run": 37.66390491600032,
+      "_run: options build + equation_search": 37.62944370797777,
+      "fit_total": 37.66461395799706,
+      "sympy+predict": 0.00602012500166893,
+      "best_loss": 3.0427317e-14,
+      "n_equations": 12
+    }
+  ]
+}
+.venv/bin/python profiling/stage_timing.py 3  119.96s user 5.00s system 101% cpu 2:03.08 total

@@ -1,0 +1,94 @@
+MethodInstance for SymbolicRegression.MutateModule.var"#next_generation#6"(::Nothing, ::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, ::Nothing, ::Nothing, ::typeof(SymbolicRegression.MutateModule.next_generation), ::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, ::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, ::Int64, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing})
+  from var"#next_generation#6"(tmp_trace::Union{Nothing, Dict{String, Any}}, plugin_states::Tuple, eval_context, population_for_backsolve, ::typeof(SymbolicRegression.MutateModule.next_generation), dataset::D, member::P, curmaxsize::Int64, options::SymbolicRegression.CoreModule.OptionsStructModule.AbstractOptions) where {T, L, D<:Dataset{T, L}, N<:(AbstractExpression{T}), P<:AbstractPopMember{T, L, N}} @ SymbolicRegression.MutateModule ~/.julia/packages/SymbolicRegression/g1JuB/src/Mutate.jl:299
+Static Parameters
+  T = Float32
+  L = Float32
+  D = SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  N = Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+  P = PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+Arguments
+  #next_generation#6::Core.Const(SymbolicRegression.MutateModule.var"#next_generation#6")
+  tmp_trace::Core.Const(nothing)
+  plugin_states::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}
+  eval_context::Core.Const(nothing)
+  population_for_backsolve::Core.Const(nothing)
+  @_6::Core.Const(SymbolicRegression.MutateModule.next_generation)
+  dataset::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  member::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  curmaxsize::Int64
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+Locals
+  #7::SymbolicRegression.MutateModule.var"#8#9"{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Int64, Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, Vector{Pair{AbstractMutation, Float64}}, Int64}
+  mutation_choice::ABSTRACTMUTATION
+  mutation_idx::Int64
+  weights::Vector{Pair{AbstractMutation, Float64}}
+  nfeatures::Int64
+  before_loss::Float32
+  before_cost::Float32
+  num_evals::Float64
+  parent_ref::Int64
+  @_20::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}
+Body::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}
+1 ─       nothing
+│   %2  = SymbolicRegression.MutateModule.Tuple::Core.Const(Tuple)
+│   %3  = $(Expr(:static_parameter, 5))::Core.Const(PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}})
+│   %4  = SymbolicRegression.MutateModule.Bool::Core.Const(Bool)
+│   %5  = SymbolicRegression.MutateModule.Float64::Core.Const(Float64)
+│   %6  = Core.apply_type(%2, %3, %4, %5)::Core.Const(Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64})
+│         (parent_ref = Base.getproperty(member, :ref))
+│         (num_evals = 0.0)
+│   %9  = Base.getproperty(member, :cost)::Float32
+│   %10 = Base.getproperty(member, :loss)::Float32
+│         (before_cost = %9)
+│         (before_loss = %10)
+│   %13 = SymbolicRegression.MutateModule.max_features::Core.Const(SymbolicRegression.CoreModule.DatasetModule.max_features)
+│         (nfeatures = (%13)(dataset, options))
+│   %15 = SymbolicRegression.MutateModule._mutation_weights_scratch::Core.Const(SymbolicRegression.MutateModule._mutation_weights_scratch)
+│         (weights = (%15)(options))
+│   %17 = SymbolicRegression.MutateModule.condition_mutation_weights!::Core.Const(SymbolicRegression.MutateModule.condition_mutation_weights!)
+│   %18 = weights::Vector{Pair{AbstractMutation, Float64}}
+│   %19 = nfeatures::Int64
+│         (%17)(%18, member, options, curmaxsize, %19)
+│   %21 = SymbolicRegression.MutateModule.strictmap::Core.Const(SymbolicRegression.UtilsModule.strictmap)
+│   %22 = SymbolicRegression.MutateModule.:(var"#8#9")::Core.Const(SymbolicRegression.MutateModule.var"#8#9")
+│   %23 = Core._typeof_captured_variable(member)::Core.Const(PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}})
+│   %24 = Core._typeof_captured_variable(curmaxsize)::Core.Const(Int64)
+│   %25 = Core._typeof_captured_variable(options)::Core.Const(Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing})
+│   %26 = weights::Vector{Pair{AbstractMutation, Float64}}
+│   %27 = Core._typeof_captured_variable(%26)::Core.Const(Vector{Pair{AbstractMutation, Float64}})
+│   %28 = nfeatures::Int64
+│   %29 = Core._typeof_captured_variable(%28)::Core.Const(Int64)
+│   %30 = Core.apply_type(%22, %23, %24, %25, %27, %29)::Core.Const(SymbolicRegression.MutateModule.var"#8#9"{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Int64, Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, Vector{Pair{AbstractMutation, Float64}}, Int64})
+│   %31 = weights::Vector{Pair{AbstractMutation, Float64}}
+│   %32 = nfeatures::Int64
+│         (#7 = %new(%30, member, curmaxsize, options, %31, %32))
+│   %34 = #7::SymbolicRegression.MutateModule.var"#8#9"{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Int64, Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, Vector{Pair{AbstractMutation, Float64}}, Int64}
+│   %35 = Base.getproperty(options, :plugins)::Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}
+│         (%21)(%34, %35, plugin_states)
+│   %37 = SymbolicRegression.MutateModule._sample_mutation::Core.Const(SymbolicRegression.MutateModule._sample_mutation)
+│   %38 = weights::Vector{Pair{AbstractMutation, Float64}}
+│         (mutation_idx = (%37)(%38))
+│   %40 = weights::Vector{Pair{AbstractMutation, Float64}}
+│   %41 = mutation_idx::Int64
+│   %42 = Base.getindex(%40, %41)::Pair{AbstractMutation, Float64}
+│         (mutation_choice = Base.getproperty(%42, :first))
+│   %44 = SymbolicRegression.MutateModule._dispatch_next_generation::Core.Const(SymbolicRegression.MutateModule._dispatch_next_generation)
+│   %45 = mutation_choice::ABSTRACTMUTATION
+│   %46 = mutation_idx::Int64
+│   %47 = nfeatures::Int64
+│   %48 = before_cost::Float32
+│   %49 = before_loss::Float32
+│   %50 = parent_ref::Int64
+│   %51 = num_evals::Core.Const(0.0)
+│   %52 = (%44)(%45, %46, dataset, member, curmaxsize, %47, %48, %49, %50, options, tmp_trace, plugin_states, eval_context, population_for_backsolve, %51)::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}
+│         (@_20 = %52)
+│   %54 = @_20::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}
+│   %55 = (%54 isa %6)::Core.Const(true)
+└──       goto #3 if not %55
+2 ─       goto #4
+3 ─       Core.Const(:(@_20))
+│         Core.Const(:(Base.convert(%6, %58)))
+└──       Core.Const(:(@_20 = Core.typeassert(%59, %6)))
+4 ┄ %61 = @_20::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}
+└──       return %61
+

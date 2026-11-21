@@ -1,0 +1,130 @@
+====================================================================================================
+eval_tree_array(ex, X, operators)   [#eval_tree_array#14]
+  return type: Tuple{Vector{Float32}, Bool}  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 0   small unions: 0   abstract slots: 0
+====================================================================================================
+eval_tree_array(node, X, operators)   [eval_tree_array]
+  return type: Tuple{Vector{Float32}, Bool}  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 0   small unions: 0   abstract slots: 0
+====================================================================================================
+eval_tree_array(ex, X, options) [SR wrapper]   [#eval_tree_array#14]
+  return type: Tuple{Vector{Float32}, Bool}  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 0   small unions: 0   abstract slots: 0
+====================================================================================================
+_update_hall_of_fame_unchecked!   [_update_hall_of_fame_unchecked!]
+  return type: Nothing  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 0   small unions: 0   abstract slots: 0
+====================================================================================================
+eval_loss   [eval_loss]
+  return type: Float32  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 0   small unions: 0   abstract slots: 0
+====================================================================================================
+_eval_loss   [_eval_loss]
+  return type: Float32  (ok)
+  runtime dispatches: 3
+    dyn   %56::Any  <=  :(SymbolicRegression.LossFunctionsModule._loss(%36, %54, %55))
+    dyn   %84::Any  <=  :(%56 + 0.0f0)
+    dyn   %89::Any  <=  :(Base.convert(Float32, %85))
+  abstract SSA values: 5   small unions: 1   abstract slots: 0
+    bad   %55::Union{Function, SupervisedLoss}  <=  :(Base.getfield(_4, :elementwise_loss))
+    bad   %56::Any  <=  :(SymbolicRegression.LossFunctionsModule._loss(%36, %54, %55))
+    bad   %84::Any  <=  :(%56 + 0.0f0)
+    bad   %85::Any  <=  :(φ (%84 => %84, %57 => %56))
+    bad   %89::Any  <=  :(Base.convert(Float32, %85))
+    union %4::Union{Tuple{Nothing, Bool}, Tuple{Vector{Float32}, Bool}}  <=  :($(Expr(:invoke, CodeInstance for MethodInstance for SymbolicRegression.InterfaceDynamicExpressionsModule.var"#eval_tree_array#1"(::Nothing, ::Nothing, ::Nothing, ::Base.Pairs{Symbol, Union{}, Nothing, @NamedTuple{}}, ::typeof(eval_
+====================================================================================================
+eval_cost   [eval_cost]
+  return type: Tuple{Float32, Float32}  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 0   small unions: 0   abstract slots: 0
+====================================================================================================
+compute_complexity   [compute_complexity]
+  return type: Int64  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 0   small unions: 0   abstract slots: 0
+====================================================================================================
+best_of_sample   [#best_of_sample#4]
+  return type: PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 0   small unions: 0   abstract slots: 0
+====================================================================================================
+next_generation   [#next_generation#6]
+  return type: Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}  (ok)
+  runtime dispatches: 1
+    dyn   %161::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}  <=  :(SymbolicRegression.MutateModule._next_generation(%30, %11, _7, _8, _9, %4, %2, %3, %1, _10, _2, _3, _4, _5, 0.0))
+  abstract SSA values: 2   small unions: 0   abstract slots: 0
+    bad   %6::Any  <=  :($(Expr(:invoke, CodeInstance for MethodInstance for SymbolicRegression.MutateModule.condition_mutation_weights!(::Vector{Pair{AbstractMutation, Float64}}, ::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, ::
+    bad   %30::AbstractMutation  <=  :(Base.getfield(%28, :first))
+====================================================================================================
+crossover_generation   [#crossover_generation#5]
+  return type: Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}  (ok)
+  runtime dispatches: 1
+    dyn   %52::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}  <=  :(SymbolicRegress
+  abstract SSA values: 3   small unions: 0   abstract slots: 0
+    bad   %25::AbstractCrossover  <=  :(Base.getfield(%22, :first))
+    bad   %46::AbstractCrossover  <=  :(Base.getfield(%44, :first))
+    bad   %47::AbstractCrossover  <=  :(φ (%26 => %25, %46 => %46))
+====================================================================================================
+optimize_constants   [#optimize_constants#1]
+  return type: Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}  (ok)
+  runtime dispatches: 2
+    dyn   %20::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}  <=  :(SymbolicRegression.ConstantOptimizationModule._optimize_constants(_4, _5, %6, %7, %18, Optim.Newton{LineSearches.InitialStatic{Float64}, LineSearch
+    dyn   %26::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Float64}  <=  :(SymbolicRegression.ConstantOptimizationModule._optimize_constants(_4, _5, %6, %7, %23, %24, %25, _2))
+  abstract SSA values: 5   small unions: 0   abstract slots: 0
+    bad   %18::Any  <=  :($(Expr(:invoke, CodeInstance for MethodInstance for SymbolicRegression.CoreModule.OptionsStructModule.specialized_options(::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tup
+    bad   %19::Optim.Options  <=  :(Base.getfield(_6, :optimizer_options))
+    bad   %23::Any  <=  :($(Expr(:invoke, CodeInstance for MethodInstance for SymbolicRegression.CoreModule.OptionsStructModule.specialized_options(::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tup
+    bad   %24::Optim.AbstractOptimizer  <=  :(Base.getfield(_6, :optimizer_algorithm))
+    bad   %25::Optim.Options  <=  :(Base.getfield(_6, :optimizer_options))
+====================================================================================================
+simplify_tree!   [simplify_tree!]
+  return type: Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 0   small unions: 0   abstract slots: 0
+====================================================================================================
+combine_operators   [combine_operators]
+  return type: Node{Float32, 2}  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 0   small unions: 4   abstract slots: 0
+    union %122::Union{typeof(*), typeof(+), typeof(-), typeof(/)}  <=  :(Base.getfield((+, *, -, /), %120, %121))
+    union %245::Union{typeof(*), typeof(+), typeof(-), typeof(/)}  <=  :(Base.getfield((+, *, -, /), %243, %244))
+    union %304::Union{typeof(*), typeof(+), typeof(-), typeof(/)}  <=  :(Base.getfield((+, *, -, /), %302, %303))
+    union %341::Union{typeof(*), typeof(+), typeof(-), typeof(/)}  <=  :(Base.getfield((+, *, -, /), %339, %340))
+====================================================================================================
+reg_evol_cycle   [#reg_evol_cycle#1]
+  return type: Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 2   small unions: 0   abstract slots: 0
+    bad   %358::Any  <=  :($(Expr(:invoke, CodeInstance for MethodInstance for SymbolicRegression.HallOfFameModule._update_hall_of_fame_unchecked!(::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Express
+    bad   %370::Any  <=  :($(Expr(:invoke, CodeInstance for MethodInstance for SymbolicRegression.HallOfFameModule._update_hall_of_fame_unchecked!(::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Express
+====================================================================================================
+s_r_cycle   [#s_r_cycle#1]
+  return type: Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 1   small unions: 1   abstract slots: 0
+    bad   %213::Any  <=  :($(Expr(:invoke, CodeInstance for MethodInstance for SymbolicRegression.HallOfFameModule._update_hall_of_fame_unchecked!(::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Express
+    union %72::Union{SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, SymbolicRegression.CoreModule.DatasetModule.SubDataset{Float32, Float32, SymbolicRegression.CoreModule.DatasetModule.Ba
+====================================================================================================
+optimize_and_simplify_population   [optimize_and_simplify_population]
+  return type: Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}  (ok)
+  runtime dispatches: 2
+    dyn   %545::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}  <=  :(SymbolicRegression.SingleIterationModule.simplify_tree!(%543, %544))
+    dyn   %547::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}  <=  :(SymbolicRegression.SingleIterationModule.combine_operators(%545, %546))
+  abstract SSA values: 6   small unions: 1   abstract slots: 0
+    bad   %55::Any  <=  :($(Expr(:gc_preserve_begin, :(%54))))
+    bad   %74::Any  <=  :($(Expr(:invoke, CodeInstance for MethodInstance for Random.XoshiroSimd.xoshiro_bulk_nosimd(::TaskLocalRNG, ::Ptr{UInt8}, ::Int64, ::Type{Float64}, ::typeof(Random.XoshiroSimd._bits2float)), :(Random.XoshiroSimd.xoshiro_bulk_nosimd), TaskLocalRNG(), :(%69), :(%70), Float64, :(Random.X
+    bad   %176::Any  <=  :($(Expr(:gc_preserve_begin, :(%164))))
+    bad   %177::Any  <=  :($(Expr(:gc_preserve_begin, :(%160))))
+    bad   %544::OperatorEnum  <=  :(Base.getfield(_4, :operators))
+    bad   %546::OperatorEnum  <=  :(Base.getfield(_4, :operators))
+    union %502::Union{SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, SymbolicRegression.CoreModule.DatasetModule.SubDataset{Float32, Float32, SymbolicRegression.CoreModule.DatasetModule.B
+====================================================================================================
+update_hall_of_fame!   [update_hall_of_fame!]
+  return type: Nothing  (ok)
+  runtime dispatches: 0
+  abstract SSA values: 0   small unions: 0   abstract slots: 0

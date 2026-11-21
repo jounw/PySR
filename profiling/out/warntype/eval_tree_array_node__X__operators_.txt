@@ -1,0 +1,17 @@
+MethodInstance for DynamicExpressions.EvaluateModule.eval_tree_array(::Node{Float32, 2}, ::Matrix{Float32}, ::OperatorEnum{Tuple{Tuple{typeof(cos), typeof(exp), typeof(sin)}, Tuple{typeof(+), typeof(*), typeof(-), typeof(/)}}})
+  from eval_tree_array(tree::AbstractExpressionNode{T}, cX::AbstractMatrix{T}, operators::OperatorEnum; eval_context, _deprecated_kws...) where T @ DynamicExpressions.EvaluateModule ~/.julia/packages/DynamicExpressions/Ah0kD/src/Evaluate.jl:280
+Static Parameters
+  T = Float32
+Arguments
+  #self#::Core.Const(DynamicExpressions.EvaluateModule.eval_tree_array)
+  tree::Node{Float32, 2}
+  cX::Matrix{Float32}
+  operators::Core.Const(OperatorEnum{Tuple{Tuple{typeof(cos), typeof(exp), typeof(sin)}, Tuple{typeof(+), typeof(*), typeof(-), typeof(/)}}}(((cos, exp, sin), (+, *, -, /))))
+Body::Tuple{Vector{Float32}, Bool}
+1 ─ %1 = DynamicExpressions.EvaluateModule.:(var"#eval_tree_array#2")::Core.Const(DynamicExpressions.EvaluateModule.var"#eval_tree_array#2")
+│   %2 = DynamicExpressions.EvaluateModule.nothing::Core.Const(nothing)
+│   %3 = Core.NamedTuple()::Core.Const(NamedTuple())
+│   %4 = Base.pairs(%3)::Core.Const(Base.Pairs{Symbol, Union{}, Nothing, @NamedTuple{}}())
+│   %5 = (%1)(%2, %4, #self#, tree, cX, operators)::Tuple{Vector{Float32}, Bool}
+└──      return %5
+

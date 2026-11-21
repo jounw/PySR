@@ -1,0 +1,414 @@
+MethodInstance for SymbolicRegression.RegularizedEvolutionModule.var"#reg_evol_cycle#1"(::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, ::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, ::Nothing, ::typeof(SymbolicRegression.RegularizedEvolutionModule.reg_evol_cycle), ::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, ::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, ::Int64, ::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, ::Nothing)
+  from var"#reg_evol_cycle#1"(plugin_states::Tuple, best_seen::HallOfFame, eval_context, ::typeof(SymbolicRegression.RegularizedEvolutionModule.reg_evol_cycle), dataset::Dataset{T, L}, pop::P, curmaxsize::Int64, options::SymbolicRegression.CoreModule.OptionsStructModule.AbstractOptions, trace::Union{Nothing, Dict{String, Any}}) where {T, L<:Real, P<:(Population{T, L, N, PM} where {N<:(AbstractExpression{T}), PM<:AbstractPopMember{T, L, N}})} @ SymbolicRegression.RegularizedEvolutionModule ~/.julia/packages/SymbolicRegression/g1JuB/src/RegularizedEvolution.jl:97
+Static Parameters
+  T = Float32
+  L = Float32
+  P = Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+Arguments
+  #reg_evol_cycle#1::Core.Const(SymbolicRegression.RegularizedEvolutionModule.var"#reg_evol_cycle#1")
+  plugin_states::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}
+  best_seen::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  eval_context::Core.Const(nothing)
+  @_5::Core.Const(SymbolicRegression.RegularizedEvolutionModule.reg_evol_cycle)
+  dataset::SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}
+  pop::Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  curmaxsize::Int64
+  options::Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}
+  trace::Core.Const(nothing)
+Locals
+  @_11::UNION{NOTHING, TUPLE{INT64, INT64}}
+  wrapped_step::SymbolicRegression.RegularizedEvolutionModule.MutationStep{SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, Nothing, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Nothing, Nothing, Nothing}
+  base_step::SymbolicRegression.RegularizedEvolutionModule.MutationStep{SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, Nothing, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Nothing, Nothing, Nothing}
+  attempted_members::Nothing
+  attempted_results::Nothing
+  has_mutation_wrappers::Bool
+  traced_steps::Nothing
+  mutation_wrappers::Tuple{Nothing, Nothing, Nothing}
+  n_evol_cycles::Int64
+  num_evals::Float64
+  #5::SymbolicRegression.RegularizedEvolutionModule.var"#12#13"{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Int64}
+  #4::SymbolicRegression.RegularizedEvolutionModule.var"#10#11"{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}}
+  @_23::Int64
+  #3::SymbolicRegression.RegularizedEvolutionModule.var"#8#9"{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}}
+  #2::Union{}
+  i::Int64
+  oldest2::Int64
+  oldest1::Int64
+  baby2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  baby1::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  tmp_num_evals::Float64
+  crossover_accepted::Bool
+  crossover_trace::Nothing
+  allstar2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  allstar1::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  oldest::Int64
+  should_replace::Bool
+  mutation_accepted::Bool
+  baby::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  selected_result::SymbolicRegression.CoreModule.PluginModule.MutationStepResult{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  selected_attempt_idx::Int64
+  result::SymbolicRegression.CoreModule.PluginModule.MutationStepResult{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  allstar::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  @_44::Nothing
+  @_45::Nothing
+  @_46::SymbolicRegression.CoreModule.PluginModule.MutationStepResult{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  @_47::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  @_48::Bool
+  @_49::Int64
+  @_50::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+Body::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+1 ──        nothing
+│           Core.NewvarNode(:(@_11))
+│           Core.NewvarNode(:(wrapped_step))
+│           Core.NewvarNode(:(base_step))
+│           Core.NewvarNode(:(attempted_members))
+│           Core.NewvarNode(:(attempted_results))
+│    %7   = SymbolicRegression.RegularizedEvolutionModule.Tuple::Core.Const(Tuple)
+│    %8   = $(Expr(:static_parameter, 3))::Core.Const(Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}})
+│    %9   = SymbolicRegression.RegularizedEvolutionModule.Float64::Core.Const(Float64)
+│    %10  = Core.apply_type(%7, %8, %9)::Core.Const(Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64})
+│           (num_evals = 0.0)
+│    %12  = SymbolicRegression.RegularizedEvolutionModule.ceil::Core.Const(ceil)
+│    %13  = SymbolicRegression.RegularizedEvolutionModule.Int::Core.Const(Int64)
+│    %14  = SymbolicRegression.RegularizedEvolutionModule.:/::Core.Const(/)
+│    %15  = Base.getproperty(pop, :n)::Int64
+│    %16  = Base.getproperty(options, :tournament_selection_n)::Int64
+│    %17  = (%14)(%15, %16)::Float64
+│           (n_evol_cycles = (%12)(%13, %17))
+│    %19  = SymbolicRegression.RegularizedEvolutionModule.strictmap::Core.Const(SymbolicRegression.UtilsModule.strictmap)
+│    %20  = SymbolicRegression.RegularizedEvolutionModule.wrap_mutation_step::Core.Const(SymbolicRegression.CoreModule.PluginModule.wrap_mutation_step)
+│    %21  = Base.getproperty(options, :plugins)::Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}
+│           (mutation_wrappers = (%19)(%20, plugin_states, %21))
+│    %23  = SymbolicRegression.RegularizedEvolutionModule.new_traced_steps::Core.Const(SymbolicRegression.TracingModule.new_traced_steps)
+│    %24  = SymbolicRegression.RegularizedEvolutionModule.eltype::Core.Const(eltype)
+│    %25  = Base.getproperty(pop, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %26  = (%24)(%25)::Core.Const(PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}})
+│           (traced_steps = (%23)(trace, %26))
+│    %28  = SymbolicRegression.RegularizedEvolutionModule.any::Core.Const(any)
+│    %29  = SymbolicRegression.RegularizedEvolutionModule.:!::Core.Const(!)
+│    %30  = SymbolicRegression.RegularizedEvolutionModule.isnothing::Core.Const(isnothing)
+│    %31  = (%29)(%30)::Core.Const(!isnothing)
+│    %32  = mutation_wrappers::Core.Const((nothing, nothing, nothing))
+│           (has_mutation_wrappers = (%28)(%31, %32))
+│    %34  = has_mutation_wrappers::Core.Const(false)
+└───        goto #3 if not %34
+2 ──        Core.Const(:(SymbolicRegression.RegularizedEvolutionModule.MutationStepResult))
+│           Core.Const(:(SymbolicRegression.RegularizedEvolutionModule.eltype))
+│           Core.Const(:(Base.getproperty(pop, :members)))
+│           Core.Const(:((%37)(%38)))
+│           Core.Const(:(Core.apply_type(%36, %39)))
+│           Core.Const(:(@_44 = Base.getindex(%40)))
+└───        Core.Const(:(goto %44))
+3 ┄─        (@_44 = SymbolicRegression.RegularizedEvolutionModule.nothing)
+│    %44  = @_44::Core.Const(nothing)
+│           (attempted_results = %44)
+│    %46  = has_mutation_wrappers::Core.Const(false)
+└───        goto #5 if not %46
+4 ──        Core.Const(:(SymbolicRegression.RegularizedEvolutionModule.eltype))
+│           Core.Const(:(Base.getproperty(pop, :members)))
+│           Core.Const(:((%48)(%49)))
+│           Core.Const(:(@_45 = Base.getindex(%50)))
+└───        Core.Const(:(goto %54))
+5 ┄─        (@_45 = SymbolicRegression.RegularizedEvolutionModule.nothing)
+│    %54  = @_45::Core.Const(nothing)
+│           (attempted_members = %54)
+│    %56  = SymbolicRegression.RegularizedEvolutionModule.MutationStep::Core.Const(SymbolicRegression.RegularizedEvolutionModule.MutationStep)
+│    %57  = attempted_results::Core.Const(nothing)
+│    %58  = attempted_members::Core.Const(nothing)
+│    %59  = traced_steps::Core.Const(nothing)
+│           (base_step = (%56)(dataset, pop, curmaxsize, options, plugin_states, eval_context, best_seen, %57, %58, %59))
+│    %61  = SymbolicRegression.RegularizedEvolutionModule.build_mutation_step::Core.Const(SymbolicRegression.RegularizedEvolutionModule.build_mutation_step)
+│    %62  = mutation_wrappers::Core.Const((nothing, nothing, nothing))
+│    %63  = base_step::SymbolicRegression.RegularizedEvolutionModule.MutationStep{SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, Nothing, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Nothing, Nothing, Nothing}
+│           (wrapped_step = (%61)(%62, %63))
+│    %65  = SymbolicRegression.RegularizedEvolutionModule.:(:)::Core.Const(Colon())
+│    %66  = n_evol_cycles::Int64
+│    %67  = (%65)(1, %66)::Core.PartialStruct(UnitRange{Int64}, Union{Nothing, Bool}[0, 0], Any[Core.Const(1), Int64])
+│           (@_11 = Base.iterate(%67))
+│    %69  = @_11::UNION{NOTHING, TUPLE{INT64, INT64}}
+│    %70  = (%69 === nothing)::Bool
+│    %71  = Base.not_int(%70)::Bool
+└───        goto #35 if not %71
+6 ┄─        Core.NewvarNode(:(#5))
+│           Core.NewvarNode(:(#4))
+│           Core.NewvarNode(:(@_23))
+│           Core.NewvarNode(:(#3))
+│           Core.NewvarNode(:(#2))
+│           Core.NewvarNode(:(oldest2))
+│           Core.NewvarNode(:(oldest1))
+│           Core.NewvarNode(:(baby2))
+│           Core.NewvarNode(:(baby1))
+│           Core.NewvarNode(:(tmp_num_evals))
+│           Core.NewvarNode(:(crossover_accepted))
+│           Core.NewvarNode(:(crossover_trace))
+│           Core.NewvarNode(:(allstar2))
+│           Core.NewvarNode(:(allstar1))
+│           Core.NewvarNode(:(oldest))
+│           Core.NewvarNode(:(should_replace))
+│           Core.NewvarNode(:(mutation_accepted))
+│           Core.NewvarNode(:(baby))
+│           Core.NewvarNode(:(selected_result))
+│           Core.NewvarNode(:(selected_attempt_idx))
+│           Core.NewvarNode(:(result))
+│           Core.NewvarNode(:(allstar))
+│    %95  = @_11::Tuple{Int64, Int64}
+│           (i = Core.getfield(%95, 1))
+│    %97  = Core.getfield(%95, 2)::Int64
+│    %98  = SymbolicRegression.RegularizedEvolutionModule.:>::Core.Const(>)
+│    %99  = SymbolicRegression.RegularizedEvolutionModule.rand::Core.Const(rand)
+│    %100 = (%99)()::Float64
+│    %101 = Base.getproperty(options, :crossover_probability)::Float64
+│    %102 = (%98)(%100, %101)::Bool
+└───        goto #23 if not %102
+7 ── %104 = (:plugin_states,)::Core.Const((:plugin_states,))
+│    %105 = Core.apply_type(Core.NamedTuple, %104)::Core.Const(NamedTuple{(:plugin_states,)})
+│    %106 = Core.tuple(plugin_states)::Tuple{Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}}
+│    %107 = (%105)(%106)::@NamedTuple{plugin_states::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}}
+│    %108 = SymbolicRegression.RegularizedEvolutionModule.best_of_sample::Core.Const(SymbolicRegression.PopulationModule.best_of_sample)
+│           (allstar = Core.kwcall(%107, %108, pop, options))
+│    %110 = SymbolicRegression.RegularizedEvolutionModule.reset!::Core.Const(SymbolicRegression.RegularizedEvolutionModule.reset!)
+│    %111 = base_step::SymbolicRegression.RegularizedEvolutionModule.MutationStep{SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, Nothing, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Nothing, Nothing, Nothing}
+│           (%110)(%111)
+│    %113 = wrapped_step::SymbolicRegression.RegularizedEvolutionModule.MutationStep{SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, Nothing, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Nothing, Nothing, Nothing}
+│    %114 = allstar::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│           (result = (%113)(%114))
+│    %116 = result::Core.PartialStruct(SymbolicRegression.CoreModule.PluginModule.MutationStepResult{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Union{Nothing, Bool}[0, 0, 0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Core.Const(1), Float64])
+│           (selected_attempt_idx = Base.getproperty(%116, :attempt_id))
+│    %118 = SymbolicRegression.RegularizedEvolutionModule.isnothing::Core.Const(isnothing)
+│    %119 = base_step::SymbolicRegression.RegularizedEvolutionModule.MutationStep{SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, Nothing, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Nothing, Nothing, Nothing}
+│    %120 = Base.getproperty(%119, :attempted_results)::Core.Const(nothing)
+│    %121 = (%118)(%120)::Core.Const(true)
+└───        goto #9 if not %121
+8 ── %123 = SymbolicRegression.RegularizedEvolutionModule.:+::Core.Const(+)
+│    %124 = num_evals::Float64
+│    %125 = result::Core.PartialStruct(SymbolicRegression.CoreModule.PluginModule.MutationStepResult{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Union{Nothing, Bool}[0, 0, 0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Core.Const(1), Float64])
+│    %126 = Base.getproperty(%125, :num_evals)::Float64
+│           (num_evals = (%123)(%124, %126))
+│    %128 = result::Core.PartialStruct(SymbolicRegression.CoreModule.PluginModule.MutationStepResult{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Union{Nothing, Bool}[0, 0, 0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Core.Const(1), Float64])
+│           (@_46 = %128)
+└───        goto #10
+9 ──        Core.Const(:(SymbolicRegression.RegularizedEvolutionModule.checkbounds))
+│           Core.Const(:(SymbolicRegression.RegularizedEvolutionModule.Bool))
+│           Core.Const(:(base_step))
+│           Core.Const(:(Base.getproperty(%133, :attempted_results)))
+│           Core.Const(:(selected_attempt_idx))
+│           Core.Const(:((%131)(%132, %134, %135)))
+│           Core.Const(:(goto %139 if not %136))
+│           Core.Const(:(goto %143))
+│           Core.Const(:(SymbolicRegression.RegularizedEvolutionModule.throw))
+│           Core.Const(:(SymbolicRegression.RegularizedEvolutionModule.ArgumentError))
+│           Core.Const(:((%140)("Mutation middleware must return a result from `next_step`.")))
+│           Core.Const(:((%139)(%141)))
+│           Core.Const(:(SymbolicRegression.RegularizedEvolutionModule.:+))
+│           Core.Const(:(num_evals))
+│           Core.Const(:(SymbolicRegression.RegularizedEvolutionModule.sum))
+│           Core.Const(:(SymbolicRegression.RegularizedEvolutionModule.:(var"#6#7")))
+│           Core.Const(:(#2 = %new(%146)))
+│           Core.Const(:(#2))
+│           Core.Const(:(base_step))
+│           Core.Const(:(Base.getproperty(%149, :attempted_results)))
+│           Core.Const(:((%145)(%148, %150)))
+│           Core.Const(:(num_evals = (%143)(%144, %151)))
+│           Core.Const(:(base_step))
+│           Core.Const(:(Base.getproperty(%153, :attempted_results)))
+│           Core.Const(:(selected_attempt_idx))
+└───        Core.Const(:(@_46 = Base.getindex(%154, %155)))
+10 ┄ %157 = @_46::Core.PartialStruct(SymbolicRegression.CoreModule.PluginModule.MutationStepResult{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Union{Nothing, Bool}[0, 0, 0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Core.Const(1), Float64])
+│           (selected_result = %157)
+│    %159 = SymbolicRegression.RegularizedEvolutionModule.isnothing::Core.Const(isnothing)
+│    %160 = base_step::SymbolicRegression.RegularizedEvolutionModule.MutationStep{SymbolicRegression.CoreModule.DatasetModule.BasicDataset{Float32, Float32, Matrix{Float32}, Vector{Float32}, Nothing, @NamedTuple{}, Nothing, Nothing, Nothing, Nothing}, Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Options{SymbolicRegression.CoreModule.OptionsStructModule.ComplexityMapping{Int64, Int64, 2}, OperatorEnum, Tuple{Int64, Int64}, Tuple{Vector{Int64}, Vector{Tuple{Int64, Int64}}}, Node{T, 2} where T, Expression, @NamedTuple{}, Tuple{SimulatedAnnealingPlugin, AdaptiveParsimonyPlugin, AdaptiveMutationWeightsPlugin}, PopMember, false, false, nothing, Nothing, 5, false, Symbol, Nothing}, Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, Nothing, HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Nothing, Nothing, Nothing}
+│    %161 = Base.getproperty(%160, :attempted_members)::Core.Const(nothing)
+│    %162 = (%159)(%161)::Core.Const(true)
+└───        goto #12 if not %162
+11 ─ %164 = selected_result::Core.PartialStruct(SymbolicRegression.CoreModule.PluginModule.MutationStepResult{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Union{Nothing, Bool}[0, 0, 0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Core.Const(1), Float64])
+│           (@_47 = Base.getproperty(%164, :member))
+└───        goto #13
+12 ─        Core.Const(:(base_step))
+│           Core.Const(:(Base.getproperty(%167, :attempted_members)))
+│           Core.Const(:(selected_attempt_idx))
+└───        Core.Const(:(@_47 = Base.getindex(%168, %169)))
+13 ┄ %171 = @_47::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│           (baby = %171)
+│    %173 = selected_result::Core.PartialStruct(SymbolicRegression.CoreModule.PluginModule.MutationStepResult{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Union{Nothing, Bool}[0, 0, 0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Core.Const(1), Float64])
+│           (mutation_accepted = Base.getproperty(%173, :accepted))
+│    %175 = mutation_accepted::Bool
+└───        goto #15 if not %175
+14 ─ %177 = mutation_accepted::Core.Const(true)
+│           (@_48 = %177)
+└───        goto #16
+15 ─ %180 = SymbolicRegression.RegularizedEvolutionModule.:!::Core.Const(!)
+│    %181 = Base.getproperty(options, :skip_mutation_failures)::Bool
+└───        (@_48 = (%180)(%181))
+16 ┄ %183 = @_48::Bool
+│           (should_replace = %183)
+│    %185 = should_replace::Bool
+└───        goto #18 if not %185
+17 ─ %187 = SymbolicRegression.RegularizedEvolutionModule.argmin::Core.Const(argmin)
+│    %188 = SymbolicRegression.RegularizedEvolutionModule.:(var"#8#9")::Core.Const(SymbolicRegression.RegularizedEvolutionModule.var"#8#9")
+│    %189 = Core._typeof_captured_variable(pop)::Core.Const(Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}})
+│    %190 = Core.apply_type(%188, %189)::Core.Const(SymbolicRegression.RegularizedEvolutionModule.var"#8#9"{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}})
+│           (#3 = %new(%190, pop))
+│    %192 = #3::SymbolicRegression.RegularizedEvolutionModule.var"#8#9"{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}}
+│    %193 = SymbolicRegression.RegularizedEvolutionModule.:(:)::Core.Const(Colon())
+│    %194 = Base.getproperty(pop, :n)::Int64
+│    %195 = (%193)(1, %194)::Core.PartialStruct(UnitRange{Int64}, Union{Nothing, Bool}[0, 0], Any[Core.Const(1), Int64])
+│           (@_49 = (%187)(%192, %195))
+└───        goto #19
+18 ─        (@_49 = 0)
+19 ┄ %199 = @_49::Int64
+│           (oldest = %199)
+│    %201 = SymbolicRegression.RegularizedEvolutionModule.trace_mutation_attempts!::Core.Const(SymbolicRegression.TracingModule.trace_mutation_attempts!)
+│    %202 = traced_steps::Core.Const(nothing)
+│    %203 = oldest::Int64
+│    %204 = should_replace::Bool
+│    %205 = selected_attempt_idx::Core.Const(1)
+│           (%201)(trace, %202, pop, %203, %204, %205, options)
+│    %207 = should_replace::Bool
+└───        goto #21 if not %207
+20 ─        should_replace
+└───        goto #22
+21 ─        goto #33
+22 ─ %212 = Base.getproperty(pop, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %213 = baby::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %214 = oldest::Int64
+│           Base.setindex!(%212, %213, %214)
+└───        goto #33
+23 ─ %217 = (:plugin_states,)::Core.Const((:plugin_states,))
+│    %218 = Core.apply_type(Core.NamedTuple, %217)::Core.Const(NamedTuple{(:plugin_states,)})
+│    %219 = Core.tuple(plugin_states)::Tuple{Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}}
+│    %220 = (%218)(%219)::@NamedTuple{plugin_states::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}}
+│    %221 = SymbolicRegression.RegularizedEvolutionModule.best_of_sample::Core.Const(SymbolicRegression.PopulationModule.best_of_sample)
+│           (allstar1 = Core.kwcall(%220, %221, pop, options))
+│    %223 = (:plugin_states,)::Core.Const((:plugin_states,))
+│    %224 = Core.apply_type(Core.NamedTuple, %223)::Core.Const(NamedTuple{(:plugin_states,)})
+│    %225 = Core.tuple(plugin_states)::Tuple{Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}}
+│    %226 = (%224)(%225)::@NamedTuple{plugin_states::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}}
+│    %227 = SymbolicRegression.RegularizedEvolutionModule.best_of_sample::Core.Const(SymbolicRegression.PopulationModule.best_of_sample)
+│           (allstar2 = Core.kwcall(%226, %227, pop, options))
+│    %229 = SymbolicRegression.RegularizedEvolutionModule.:(===)::Core.Const(===)
+│    %230 = allstar1::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %231 = allstar2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %232 = (%229)(%230, %231)::Bool
+└───        goto #25 if not %232
+24 ─ %234 = SymbolicRegression.RegularizedEvolutionModule.copy::Core.Const(copy)
+│    %235 = allstar2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│           (allstar2 = (%234)(%235))
+└───        goto #25
+25 ┄ %238 = SymbolicRegression.RegularizedEvolutionModule.new_trace::Core.Const(SymbolicRegression.TracingModule.new_trace)
+│           (crossover_trace = (%238)(trace))
+│    %240 = (:trace, :plugin_states, :eval_context)::Core.Const((:trace, :plugin_states, :eval_context))
+│    %241 = Core.apply_type(Core.NamedTuple, %240)::Core.Const(NamedTuple{(:trace, :plugin_states, :eval_context)})
+│    %242 = crossover_trace::Core.Const(nothing)
+│    %243 = Core.tuple(%242, plugin_states, eval_context)::Tuple{Nothing, Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, Nothing}
+│    %244 = (%241)(%243)::@NamedTuple{trace::Nothing, plugin_states::Tuple{SymbolicRegression.SimulatedAnnealingModule.SimulatedAnnealingState, SymbolicRegression.AdaptiveParsimonyModule.AdaptiveParsimonyState, SymbolicRegression.AdaptiveMutationWeightsModule.AdaptiveMutationWeightsState}, eval_context::Nothing}
+│    %245 = SymbolicRegression.RegularizedEvolutionModule.crossover_generation::Core.Const(SymbolicRegression.CrossoverModule.crossover_generation)
+│    %246 = allstar1::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %247 = allstar2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %248 = Core.kwcall(%244, %245, %246, %247, dataset, curmaxsize, options)::Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Bool, Float64}
+│    %249 = Base.indexed_iterate(%248, 1)::Core.PartialStruct(Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Int64}, Union{Nothing, Bool}[0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Core.Const(2)])
+│           (baby1 = Core.getfield(%249, 1))
+│           (@_23 = Core.getfield(%249, 2))
+│    %252 = @_23::Core.Const(2)
+│    %253 = Base.indexed_iterate(%248, 2, %252)::Core.PartialStruct(Tuple{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Int64}, Union{Nothing, Bool}[0, 0], Any[PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, Core.Const(3)])
+│           (baby2 = Core.getfield(%253, 1))
+│           (@_23 = Core.getfield(%253, 2))
+│    %256 = @_23::Core.Const(3)
+│    %257 = Base.indexed_iterate(%248, 3, %256)::Core.PartialStruct(Tuple{Bool, Int64}, Union{Nothing, Bool}[0, 0], Any[Bool, Core.Const(4)])
+│           (crossover_accepted = Core.getfield(%257, 1))
+│           (@_23 = Core.getfield(%257, 2))
+│    %260 = @_23::Core.Const(4)
+│    %261 = Base.indexed_iterate(%248, 4, %260)::Core.PartialStruct(Tuple{Float64, Int64}, Union{Nothing, Bool}[0, 0], Any[Float64, Core.Const(5)])
+│           (tmp_num_evals = Core.getfield(%261, 1))
+│    %263 = SymbolicRegression.RegularizedEvolutionModule.:+::Core.Const(+)
+│    %264 = num_evals::Float64
+│    %265 = tmp_num_evals::Float64
+│           (num_evals = (%263)(%264, %265))
+│    %267 = crossover_accepted::Bool
+└───        goto #27 if not %267
+26 ─ %269 = SymbolicRegression.RegularizedEvolutionModule._update_hall_of_fame_unchecked!::Core.Const(SymbolicRegression.HallOfFameModule._update_hall_of_fame_unchecked!)
+│    %270 = baby1::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %271 = SymbolicRegression.RegularizedEvolutionModule.compute_complexity::Core.Const(SymbolicRegression.ComplexityModule.compute_complexity)
+│    %272 = baby1::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %273 = (%271)(%272, options)::Int64
+│           (%269)(best_seen, %270, %273)
+│    %275 = SymbolicRegression.RegularizedEvolutionModule._update_hall_of_fame_unchecked!::Core.Const(SymbolicRegression.HallOfFameModule._update_hall_of_fame_unchecked!)
+│    %276 = baby2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %277 = SymbolicRegression.RegularizedEvolutionModule.compute_complexity::Core.Const(SymbolicRegression.ComplexityModule.compute_complexity)
+│    %278 = baby2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %279 = (%277)(%278, options)::Int64
+└───        (%275)(best_seen, %276, %279)
+27 ┄ %281 = SymbolicRegression.RegularizedEvolutionModule.:!::Core.Const(!)
+│    %282 = crossover_accepted::Bool
+│    %283 = (%281)(%282)::Bool
+└───        goto #32 if not %283
+28 ─ %285 = Base.getproperty(options, :skip_mutation_failures)::Bool
+└───        goto #31 if not %285
+29 ─        goto #33
+30 ─        Core.Const(:(goto %289))
+31 ┄ %289 = SymbolicRegression.RegularizedEvolutionModule.copy::Core.Const(copy)
+│    %290 = baby1::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %291 = (%289)(%290)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %292 = SymbolicRegression.RegularizedEvolutionModule.copy::Core.Const(copy)
+│    %293 = baby2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %294 = (%292)(%293)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│           (baby1 = %291)
+└───        (baby2 = %294)
+32 ┄ %297 = SymbolicRegression.RegularizedEvolutionModule.argmin::Core.Const(argmin)
+│    %298 = SymbolicRegression.RegularizedEvolutionModule.:(var"#10#11")::Core.Const(SymbolicRegression.RegularizedEvolutionModule.var"#10#11")
+│    %299 = Core._typeof_captured_variable(pop)::Core.Const(Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}})
+│    %300 = Core.apply_type(%298, %299)::Core.Const(SymbolicRegression.RegularizedEvolutionModule.var"#10#11"{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}})
+│           (#4 = %new(%300, pop))
+│    %302 = #4::SymbolicRegression.RegularizedEvolutionModule.var"#10#11"{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}}
+│    %303 = SymbolicRegression.RegularizedEvolutionModule.:(:)::Core.Const(Colon())
+│    %304 = Base.getproperty(pop, :n)::Int64
+│    %305 = (%303)(1, %304)::Core.PartialStruct(UnitRange{Int64}, Union{Nothing, Bool}[0, 0], Any[Core.Const(1), Int64])
+│           (oldest1 = (%297)(%302, %305))
+│    %307 = SymbolicRegression.RegularizedEvolutionModule.argmin::Core.Const(argmin)
+│    %308 = SymbolicRegression.RegularizedEvolutionModule.:(var"#12#13")::Core.Const(SymbolicRegression.RegularizedEvolutionModule.var"#12#13")
+│    %309 = Core._typeof_captured_variable(pop)::Core.Const(Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}})
+│    %310 = oldest1::Int64
+│    %311 = Core._typeof_captured_variable(%310)::Core.Const(Int64)
+│    %312 = Core.apply_type(%308, %309, %311)::Core.Const(SymbolicRegression.RegularizedEvolutionModule.var"#12#13"{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Int64})
+│    %313 = oldest1::Int64
+│           (#5 = %new(%312, pop, %313))
+│    %315 = #5::SymbolicRegression.RegularizedEvolutionModule.var"#12#13"{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Int64}
+│    %316 = SymbolicRegression.RegularizedEvolutionModule.:(:)::Core.Const(Colon())
+│    %317 = Base.getproperty(pop, :n)::Int64
+│    %318 = (%316)(1, %317)::Core.PartialStruct(UnitRange{Int64}, Union{Nothing, Bool}[0, 0], Any[Core.Const(1), Int64])
+│           (oldest2 = (%307)(%315, %318))
+│    %320 = SymbolicRegression.RegularizedEvolutionModule.trace_crossover!::Core.Const(SymbolicRegression.TracingModule.trace_crossover!)
+│    %321 = allstar1::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %322 = allstar2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %323 = baby1::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %324 = baby2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %325 = oldest1::Int64
+│    %326 = oldest2::Int64
+│    %327 = crossover_trace::Core.Const(nothing)
+│           (%320)(trace, %321, %322, %323, %324, pop, %325, %326, %327, options)
+│    %329 = Base.getproperty(pop, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %330 = baby1::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %331 = oldest1::Int64
+│           Base.setindex!(%329, %330, %331)
+│    %333 = Base.getproperty(pop, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %334 = baby2::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %335 = oldest2::Int64
+└───        Base.setindex!(%333, %334, %335)
+33 ┄        (@_11 = Base.iterate(%67, %97))
+│    %338 = @_11::UNION{NOTHING, TUPLE{INT64, INT64}}
+│    %339 = (%338 === nothing)::Bool
+│    %340 = Base.not_int(%339)::Bool
+└───        goto #35 if not %340
+34 ─        goto #6
+35 ┄ %343 = num_evals::Float64
+│    %344 = Core.tuple(pop, %343)::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+│           (@_50 = %344)
+│    %346 = @_50::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+│    %347 = (%346 isa %10)::Core.Const(true)
+└───        goto #37 if not %347
+36 ─        goto #38
+37 ─        Core.Const(:(@_50))
+│           Core.Const(:(Base.convert(%10, %350)))
+└───        Core.Const(:(@_50 = Core.typeassert(%351, %10)))
+38 ┄ %353 = @_50::Tuple{Population{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, Float64}
+└───        return %353
+

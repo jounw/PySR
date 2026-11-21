@@ -1,0 +1,7 @@
+rows: 50
+abstract operators field: OperatorEnum
+specialized operators field concrete: true
+eval_loss/generic                median     1589 ns/call  range     1416 -     1657  (n=7)
+eval_loss/specialized            median     1266 ns/call  range     1242 -     1990  (n=7)
+simplify+combine/generic         median      611 ns/call  range      568 -      634  (n=7)
+simplify+combine/specialized     median      564 ns/call  range      519 -      577  (n=7)

@@ -1,0 +1,20 @@
+MethodInstance for DynamicExpressions.SimplifyModule.simplify_tree!(::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, ::OperatorEnum{Tuple{Tuple{typeof(cos), typeof(exp), typeof(sin)}, Tuple{typeof(+), typeof(*), typeof(-), typeof(/)}}})
+  from simplify_tree!(ex::Union{Expression{T, N}, DynamicExpressions.ParametricExpressionModule.ParametricExpression{T, N}}, operators::Union{Nothing, DynamicExpressions.OperatorEnumModule.AbstractOperatorEnum}) where {T, N} @ DynamicExpressions.PatchMethodsModule ~/.julia/packages/DynamicExpressions/Ah0kD/src/PatchMethods.jl:19
+Static Parameters
+  T = Float32
+  N = Node{Float32, 2}
+Arguments
+  #self#::Core.Const(DynamicExpressions.SimplifyModule.simplify_tree!)
+  ex::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+  operators::Core.Const(OperatorEnum{Tuple{Tuple{typeof(cos), typeof(exp), typeof(sin)}, Tuple{typeof(+), typeof(*), typeof(-), typeof(/)}}}(((cos, exp, sin), (+, *, -, /))))
+Body::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+1 ─ %1 = DynamicExpressions.PatchMethodsModule.with_contents::Core.Const(DynamicExpressions.ExpressionModule.with_contents)
+│   %2 = DynamicExpressions.PatchMethodsModule.simplify_tree!::Core.Const(DynamicExpressions.SimplifyModule.simplify_tree!)
+│   %3 = DynamicExpressions.PatchMethodsModule.get_contents::Core.Const(DynamicExpressions.ExpressionModule.get_contents)
+│   %4 = (%3)(ex)::Node{Float32, 2}
+│   %5 = DynamicExpressions.PatchMethodsModule.get_operators::Core.Const(DynamicExpressions.ExpressionModule.get_operators)
+│   %6 = (%5)(ex, operators)::Core.Const(OperatorEnum{Tuple{Tuple{typeof(cos), typeof(exp), typeof(sin)}, Tuple{typeof(+), typeof(*), typeof(-), typeof(/)}}}(((cos, exp, sin), (+, *, -, /))))
+│   %7 = (%2)(%4, %6)::Node{Float32, 2}
+│   %8 = (%1)(ex, %7)::Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}
+└──      return %8
+

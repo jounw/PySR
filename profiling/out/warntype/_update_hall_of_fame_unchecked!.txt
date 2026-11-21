@@ -1,0 +1,48 @@
+MethodInstance for SymbolicRegression.HallOfFameModule._update_hall_of_fame_unchecked!(::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}, ::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}, ::Int64)
+  from _update_hall_of_fame_unchecked!(hall_of_fame::HallOfFame, member::SymbolicRegression.PopMemberModule.AbstractPopMember, size::Int64) @ SymbolicRegression.HallOfFameModule ~/.julia/packages/SymbolicRegression/g1JuB/src/HallOfFame.jl:126
+Arguments
+  #self#::Core.Const(SymbolicRegression.HallOfFameModule._update_hall_of_fame_unchecked!)
+  hall_of_fame::HallOfFame{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}, PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+  member::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+  size::Int64
+Locals
+  @_5::Bool
+Body::Nothing
+1 ── %1  = SymbolicRegression.HallOfFameModule.:<::Core.Const(<)
+│    %2  = (%1)(0, size)::Bool
+└───       goto #3 if not %2
+2 ── %4  = SymbolicRegression.HallOfFameModule.:<=::Core.Const(<=)
+│    %5  = SymbolicRegression.HallOfFameModule.lastindex::Core.Const(lastindex)
+│    %6  = Base.getproperty(hall_of_fame, :exists)::Vector{Bool}
+│    %7  = (%5)(%6)::Int64
+│          (@_5 = (%4)(size, %7))
+└───       goto #4
+3 ──       (@_5 = false)
+4 ┄─ %11 = @_5::Bool
+└───       goto #6 if not %11
+5 ──       goto #7
+6 ── %14 = SymbolicRegression.HallOfFameModule.nothing::Core.Const(nothing)
+└───       return %14
+7 ── %16 = SymbolicRegression.HallOfFameModule.:!::Core.Const(!)
+│    %17 = Base.getproperty(hall_of_fame, :exists)::Vector{Bool}
+│    %18 = Base.getindex(%17, size)::Bool
+│    %19 = (%16)(%18)::Bool
+└───       goto #9 if not %19
+8 ──       goto #10
+9 ── %22 = SymbolicRegression.HallOfFameModule.:<::Core.Const(<)
+│    %23 = Base.getproperty(member, :cost)::Float32
+│    %24 = Base.getproperty(hall_of_fame, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│    %25 = Base.getindex(%24, size)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %26 = Base.getproperty(%25, :cost)::Float32
+│    %27 = (%22)(%23, %26)::Bool
+└───       goto #11 if not %27
+10 ┄ %29 = SymbolicRegression.HallOfFameModule.copy::Core.Const(copy)
+│    %30 = (%29)(member)::PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}
+│    %31 = Base.getproperty(hall_of_fame, :members)::Vector{PopMember{Float32, Float32, Expression{Float32, Node{Float32, 2}, @NamedTuple{operators::Nothing, variable_names::Nothing}}}}
+│          Base.setindex!(%31, %30, size)
+│    %33 = true::Core.Const(true)
+│    %34 = Base.getproperty(hall_of_fame, :exists)::Vector{Bool}
+└───       Base.setindex!(%34, %33, size)
+11 ┄ %36 = SymbolicRegression.HallOfFameModule.nothing::Core.Const(nothing)
+└───       return %36
+

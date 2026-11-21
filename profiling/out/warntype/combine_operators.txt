@@ -1,0 +1,401 @@
+MethodInstance for DynamicExpressions.SimplifyModule.combine_operators(::Node{Float32, 2}, ::OperatorEnum{Tuple{Tuple{typeof(cos), typeof(exp), typeof(sin)}, Tuple{typeof(+), typeof(*), typeof(-), typeof(/)}}})
+  from combine_operators(tree::Node{T, 2}, operators::DynamicExpressions.OperatorEnumModule.AbstractOperatorEnum) where T @ DynamicExpressions.SimplifyModule ~/.julia/packages/DynamicExpressions/Ah0kD/src/Simplify.jl:25
+Static Parameters
+  T = Float32
+Arguments
+  #self#::Core.Const(DynamicExpressions.SimplifyModule.combine_operators)
+  tree@_2::Node{Float32, 2}
+  operators::Core.Const(OperatorEnum{Tuple{Tuple{typeof(cos), typeof(exp), typeof(sin)}, Tuple{typeof(+), typeof(*), typeof(-), typeof(/)}}}(((cos, exp, sin), (+, *, -, /))))
+Locals
+  simplified_const::Float32
+  r::Node{Float32, 2}
+  l::Node{Float32, 2}
+  below::Node{Float32, 2}
+  topconstant::Float32
+  tmp::Node{Float32, 2}
+  op::UInt8
+  top_level_constant::Bool
+  tree@_12::Node{Float32, 2}
+  @_13::Bool
+  @_14::Bool
+Body::Node{Float32, 2}
+1 ──        (tree@_12 = tree@_2)
+│           Core.NewvarNode(:(simplified_const))
+│           Core.NewvarNode(:(r))
+│           Core.NewvarNode(:(l))
+│           Core.NewvarNode(:(below))
+│           Core.NewvarNode(:(topconstant))
+│           Core.NewvarNode(:(tmp))
+│           Core.NewvarNode(:(op))
+│           Core.NewvarNode(:(top_level_constant))
+│    %10  = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %11  = tree@_12::Node{Float32, 2}
+│    %12  = Base.getproperty(%11, :degree)::UInt8
+│    %13  = (%10)(%12, 0)::Bool
+└───        goto #4 if not %13
+2 ── %15  = tree@_12::Node{Float32, 2}
+└───        return %15
+3 ──        Core.Const(:(goto %53))
+4 ┄─ %18  = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %19  = tree@_12::Node{Float32, 2}
+│    %20  = Base.getproperty(%19, :degree)::UInt8
+│    %21  = (%18)(%20, 1)::Bool
+└───        goto #6 if not %21
+5 ── %23  = DynamicExpressions.SimplifyModule.set_child!::Core.Const(DynamicExpressions.NodeModule.set_child!)
+│    %24  = tree@_12::Node{Float32, 2}
+│    %25  = DynamicExpressions.SimplifyModule.combine_operators::Core.Const(DynamicExpressions.SimplifyModule.combine_operators)
+│    %26  = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %27  = tree@_12::Node{Float32, 2}
+│    %28  = (%26)(%27, 1)::Node{Float32, 2}
+│    %29  = (%25)(%28, operators)::Node{Float32, 2}
+│           (%23)(%24, %29, 1)
+└───        goto #8
+6 ── %32  = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %33  = tree@_12::Node{Float32, 2}
+│    %34  = Base.getproperty(%33, :degree)::UInt8
+│    %35  = (%32)(%34, 2)::Bool
+└───        goto #8 if not %35
+7 ── %37  = DynamicExpressions.SimplifyModule.set_child!::Core.Const(DynamicExpressions.NodeModule.set_child!)
+│    %38  = tree@_12::Node{Float32, 2}
+│    %39  = DynamicExpressions.SimplifyModule.combine_operators::Core.Const(DynamicExpressions.SimplifyModule.combine_operators)
+│    %40  = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %41  = tree@_12::Node{Float32, 2}
+│    %42  = (%40)(%41, 1)::Node{Float32, 2}
+│    %43  = (%39)(%42, operators)::Node{Float32, 2}
+│           (%37)(%38, %43, 1)
+│    %45  = DynamicExpressions.SimplifyModule.set_child!::Core.Const(DynamicExpressions.NodeModule.set_child!)
+│    %46  = tree@_12::Node{Float32, 2}
+│    %47  = DynamicExpressions.SimplifyModule.combine_operators::Core.Const(DynamicExpressions.SimplifyModule.combine_operators)
+│    %48  = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %49  = tree@_12::Node{Float32, 2}
+│    %50  = (%48)(%49, 2)::Node{Float32, 2}
+│    %51  = (%47)(%50, operators)::Node{Float32, 2}
+└───        (%45)(%46, %51, 2)
+8 ┄─ %53  = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %54  = tree@_12::Node{Float32, 2}
+│    %55  = Base.getproperty(%54, :degree)::UInt8
+│    %56  = (%53)(%55, 2)::Bool
+└───        goto #13 if not %56
+9 ── %58  = DynamicExpressions.SimplifyModule.is_node_constant::Core.Const(DynamicExpressions.NodeUtilsModule.is_node_constant)
+│    %59  = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %60  = tree@_12::Node{Float32, 2}
+│    %61  = (%59)(%60, 1)::Node{Float32, 2}
+│    %62  = (%58)(%61)::Bool
+└───        goto #11 if not %62
+10 ─        (@_14 = %62)
+└───        goto #12
+11 ─ %66  = DynamicExpressions.SimplifyModule.is_node_constant::Core.Const(DynamicExpressions.NodeUtilsModule.is_node_constant)
+│    %67  = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %68  = tree@_12::Node{Float32, 2}
+│    %69  = (%67)(%68, 2)::Node{Float32, 2}
+└───        (@_14 = (%66)(%69))
+12 ┄ %71  = @_14::Bool
+│           (@_13 = %71)
+└───        goto #14
+13 ─        (@_13 = false)
+14 ┄ %75  = @_13::Bool
+│           (top_level_constant = %75)
+│    %77  = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %78  = tree@_12::Node{Float32, 2}
+│    %79  = Base.getproperty(%78, :degree)::UInt8
+│    %80  = (%77)(%79, 2)::Bool
+└───        goto #25 if not %80
+15 ─ %82  = DynamicExpressions.SimplifyModule.is_commutative::Core.Const(DynamicExpressions.SimplifyModule.is_commutative)
+│    %83  = Base.getproperty(operators, :binops)::Core.Const((+, *, -, /))
+│    %84  = tree@_12::Node{Float32, 2}
+│    %85  = Base.getproperty(%84, :op)::UInt8
+│    %86  = Base.getindex(%83, %85)::UNION{TYPEOF(*), TYPEOF(+), TYPEOF(-), TYPEOF(/)}
+│    %87  = (%82)(%86)::Bool
+└───        goto #25 if not %87
+16 ─ %89  = top_level_constant::Bool
+└───        goto #25 if not %89
+17 ─ %91  = tree@_12::Node{Float32, 2}
+│           (op = Base.getproperty(%91, :op))
+│    %93  = DynamicExpressions.SimplifyModule.is_node_constant::Core.Const(DynamicExpressions.NodeUtilsModule.is_node_constant)
+│    %94  = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %95  = tree@_12::Node{Float32, 2}
+│    %96  = (%94)(%95, 1)::Node{Float32, 2}
+│    %97  = (%93)(%96)::Bool
+└───        goto #19 if not %97
+18 ─ %99  = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %100 = tree@_12::Node{Float32, 2}
+│           (tmp = (%99)(%100, 2))
+│    %102 = DynamicExpressions.SimplifyModule.set_child!::Core.Const(DynamicExpressions.NodeModule.set_child!)
+│    %103 = tree@_12::Node{Float32, 2}
+│    %104 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %105 = tree@_12::Node{Float32, 2}
+│    %106 = (%104)(%105, 1)::Node{Float32, 2}
+│           (%102)(%103, %106, 2)
+│    %108 = DynamicExpressions.SimplifyModule.set_child!::Core.Const(DynamicExpressions.NodeModule.set_child!)
+│    %109 = tree@_12::Node{Float32, 2}
+│    %110 = tmp::Node{Float32, 2}
+└───        (%108)(%109, %110, 1)
+19 ┄ %112 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %113 = tree@_12::Node{Float32, 2}
+│    %114 = (%112)(%113, 2)::Node{Float32, 2}
+│           (topconstant = Base.getproperty(%114, :val))
+│    %116 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %117 = tree@_12::Node{Float32, 2}
+│           (below = (%116)(%117, 1))
+│    %119 = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %120 = below::Node{Float32, 2}
+│    %121 = Base.getproperty(%120, :degree)::UInt8
+│    %122 = (%119)(%121, 2)::Bool
+└───        goto #25 if not %122
+20 ─ %124 = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %125 = below::Node{Float32, 2}
+│    %126 = Base.getproperty(%125, :op)::UInt8
+│    %127 = op::UInt8
+│    %128 = (%124)(%126, %127)::Bool
+└───        goto #25 if not %128
+21 ─ %130 = DynamicExpressions.SimplifyModule.is_node_constant::Core.Const(DynamicExpressions.NodeUtilsModule.is_node_constant)
+│    %131 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %132 = below::Node{Float32, 2}
+│    %133 = (%131)(%132, 1)::Node{Float32, 2}
+│    %134 = (%130)(%133)::Bool
+└───        goto #23 if not %134
+22 ─ %136 = below::Node{Float32, 2}
+│           (tree@_12 = %136)
+│    %138 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %139 = tree@_12::Node{Float32, 2}
+│    %140 = (%138)(%139, 1)::Node{Float32, 2}
+│    %141 = DynamicExpressions.SimplifyModule._op_kernel::Core.Const(DynamicExpressions.SimplifyModule._op_kernel)
+│    %142 = Base.getproperty(operators, :binops)::Core.Const((+, *, -, /))
+│    %143 = op::UInt8
+│    %144 = Base.getindex(%142, %143)::UNION{TYPEOF(*), TYPEOF(+), TYPEOF(-), TYPEOF(/)}
+│    %145 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %146 = tree@_12::Node{Float32, 2}
+│    %147 = (%145)(%146, 1)::Node{Float32, 2}
+│    %148 = Base.getproperty(%147, :val)::Float32
+│    %149 = topconstant::Float32
+│    %150 = (%141)(%144, %148, %149)::Float32
+│           Base.setproperty!(%140, :val, %150)
+└───        goto #25
+23 ─ %153 = DynamicExpressions.SimplifyModule.is_node_constant::Core.Const(DynamicExpressions.NodeUtilsModule.is_node_constant)
+│    %154 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %155 = below::Node{Float32, 2}
+│    %156 = (%154)(%155, 2)::Node{Float32, 2}
+│    %157 = (%153)(%156)::Bool
+└───        goto #25 if not %157
+24 ─ %159 = below::Node{Float32, 2}
+│           (tree@_12 = %159)
+│    %161 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %162 = tree@_12::Node{Float32, 2}
+│    %163 = (%161)(%162, 2)::Node{Float32, 2}
+│    %164 = DynamicExpressions.SimplifyModule._op_kernel::Core.Const(DynamicExpressions.SimplifyModule._op_kernel)
+│    %165 = Base.getproperty(operators, :binops)::Core.Const((+, *, -, /))
+│    %166 = op::UInt8
+│    %167 = Base.getindex(%165, %166)::UNION{TYPEOF(*), TYPEOF(+), TYPEOF(-), TYPEOF(/)}
+│    %168 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %169 = tree@_12::Node{Float32, 2}
+│    %170 = (%168)(%169, 2)::Node{Float32, 2}
+│    %171 = Base.getproperty(%170, :val)::Float32
+│    %172 = topconstant::Float32
+│    %173 = (%164)(%167, %171, %172)::Float32
+└───        Base.setproperty!(%163, :val, %173)
+25 ┄ %175 = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %176 = tree@_12::Node{Float32, 2}
+│    %177 = Base.getproperty(%176, :degree)::UInt8
+│    %178 = (%175)(%177, 2)::Bool
+└───        goto #42 if not %178
+26 ─ %180 = DynamicExpressions.SimplifyModule.is_subtraction::Core.Const(DynamicExpressions.SimplifyModule.is_subtraction)
+│    %181 = Base.getproperty(operators, :binops)::Core.Const((+, *, -, /))
+│    %182 = tree@_12::Node{Float32, 2}
+│    %183 = Base.getproperty(%182, :op)::UInt8
+│    %184 = Base.getindex(%181, %183)::UNION{TYPEOF(*), TYPEOF(+), TYPEOF(-), TYPEOF(/)}
+│    %185 = (%180)(%184)::Bool
+└───        goto #42 if not %185
+27 ─ %187 = top_level_constant::Bool
+└───        goto #42 if not %187
+28 ─ %189 = DynamicExpressions.SimplifyModule.is_node_constant::Core.Const(DynamicExpressions.NodeUtilsModule.is_node_constant)
+│    %190 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %191 = tree@_12::Node{Float32, 2}
+│    %192 = (%190)(%191, 1)::Node{Float32, 2}
+│    %193 = (%189)(%192)::Bool
+└───        goto #36 if not %193
+29 ─ %195 = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %196 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %197 = tree@_12::Node{Float32, 2}
+│    %198 = (%196)(%197, 2)::Node{Float32, 2}
+│    %199 = Base.getproperty(%198, :degree)::UInt8
+│    %200 = (%195)(%199, 2)::Bool
+└───        goto #35 if not %200
+30 ─ %202 = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %203 = tree@_12::Node{Float32, 2}
+│    %204 = Base.getproperty(%203, :op)::UInt8
+│    %205 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %206 = tree@_12::Node{Float32, 2}
+│    %207 = (%205)(%206, 2)::Node{Float32, 2}
+│    %208 = Base.getproperty(%207, :op)::UInt8
+│    %209 = (%202)(%204, %208)::Bool
+└───        goto #35 if not %209
+31 ─ %211 = DynamicExpressions.SimplifyModule.is_node_constant::Core.Const(DynamicExpressions.NodeUtilsModule.is_node_constant)
+│    %212 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %213 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %214 = tree@_12::Node{Float32, 2}
+│    %215 = (%213)(%214, 2)::Node{Float32, 2}
+│    %216 = (%212)(%215, 1)::Node{Float32, 2}
+│    %217 = (%211)(%216)::Bool
+└───        goto #33 if not %217
+32 ─ %219 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %220 = tree@_12::Node{Float32, 2}
+│           (l = (%219)(%220, 1))
+│    %222 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %223 = tree@_12::Node{Float32, 2}
+│           (r = (%222)(%223, 2))
+│    %225 = DynamicExpressions.SimplifyModule.:-::Core.Const(-)
+│    %226 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %227 = r::Node{Float32, 2}
+│    %228 = (%226)(%227, 1)::Node{Float32, 2}
+│    %229 = Base.getproperty(%228, :val)::Float32
+│    %230 = l::Node{Float32, 2}
+│    %231 = Base.getproperty(%230, :val)::Float32
+│           (simplified_const = (%225)(%229, %231))
+│    %233 = DynamicExpressions.SimplifyModule.set_child!::Core.Const(DynamicExpressions.NodeModule.set_child!)
+│    %234 = tree@_12::Node{Float32, 2}
+│    %235 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %236 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %237 = tree@_12::Node{Float32, 2}
+│    %238 = (%236)(%237, 2)::Node{Float32, 2}
+│    %239 = (%235)(%238, 2)::Node{Float32, 2}
+│           (%233)(%234, %239, 1)
+│    %241 = DynamicExpressions.SimplifyModule.set_child!::Core.Const(DynamicExpressions.NodeModule.set_child!)
+│    %242 = tree@_12::Node{Float32, 2}
+│    %243 = l::Node{Float32, 2}
+│           (%241)(%242, %243, 2)
+│    %245 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %246 = tree@_12::Node{Float32, 2}
+│    %247 = (%245)(%246, 2)::Node{Float32, 2}
+│    %248 = simplified_const::Float32
+│           Base.setproperty!(%247, :val, %248)
+└───        goto #35
+33 ─ %251 = DynamicExpressions.SimplifyModule.is_node_constant::Core.Const(DynamicExpressions.NodeUtilsModule.is_node_constant)
+│    %252 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %253 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %254 = tree@_12::Node{Float32, 2}
+│    %255 = (%253)(%254, 2)::Node{Float32, 2}
+│    %256 = (%252)(%255, 2)::Node{Float32, 2}
+│    %257 = (%251)(%256)::Bool
+└───        goto #35 if not %257
+34 ─ %259 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %260 = tree@_12::Node{Float32, 2}
+│           (l = (%259)(%260, 1))
+│    %262 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %263 = tree@_12::Node{Float32, 2}
+│           (r = (%262)(%263, 2))
+│    %265 = DynamicExpressions.SimplifyModule.:+::Core.Const(+)
+│    %266 = l::Node{Float32, 2}
+│    %267 = Base.getproperty(%266, :val)::Float32
+│    %268 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %269 = r::Node{Float32, 2}
+│    %270 = (%268)(%269, 2)::Node{Float32, 2}
+│    %271 = Base.getproperty(%270, :val)::Float32
+│           (simplified_const = (%265)(%267, %271))
+│    %273 = DynamicExpressions.SimplifyModule.set_child!::Core.Const(DynamicExpressions.NodeModule.set_child!)
+│    %274 = tree@_12::Node{Float32, 2}
+│    %275 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %276 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %277 = tree@_12::Node{Float32, 2}
+│    %278 = (%276)(%277, 2)::Node{Float32, 2}
+│    %279 = (%275)(%278, 1)::Node{Float32, 2}
+│           (%273)(%274, %279, 2)
+│    %281 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %282 = tree@_12::Node{Float32, 2}
+│    %283 = (%281)(%282, 1)::Node{Float32, 2}
+│    %284 = simplified_const::Float32
+└───        Base.setproperty!(%283, :val, %284)
+35 ┄        goto #42
+36 ─ %287 = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %288 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %289 = tree@_12::Node{Float32, 2}
+│    %290 = (%288)(%289, 1)::Node{Float32, 2}
+│    %291 = Base.getproperty(%290, :degree)::UInt8
+│    %292 = (%287)(%291, 2)::Bool
+└───        goto #42 if not %292
+37 ─ %294 = DynamicExpressions.SimplifyModule.:(==)::Core.Const(==)
+│    %295 = tree@_12::Node{Float32, 2}
+│    %296 = Base.getproperty(%295, :op)::UInt8
+│    %297 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %298 = tree@_12::Node{Float32, 2}
+│    %299 = (%297)(%298, 1)::Node{Float32, 2}
+│    %300 = Base.getproperty(%299, :op)::UInt8
+│    %301 = (%294)(%296, %300)::Bool
+└───        goto #42 if not %301
+38 ─ %303 = DynamicExpressions.SimplifyModule.is_node_constant::Core.Const(DynamicExpressions.NodeUtilsModule.is_node_constant)
+│    %304 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %305 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %306 = tree@_12::Node{Float32, 2}
+│    %307 = (%305)(%306, 1)::Node{Float32, 2}
+│    %308 = (%304)(%307, 1)::Node{Float32, 2}
+│    %309 = (%303)(%308)::Bool
+└───        goto #40 if not %309
+39 ─ %311 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %312 = tree@_12::Node{Float32, 2}
+│           (l = (%311)(%312, 1))
+│    %314 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %315 = tree@_12::Node{Float32, 2}
+│           (r = (%314)(%315, 2))
+│    %317 = DynamicExpressions.SimplifyModule.:-::Core.Const(-)
+│    %318 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %319 = l::Node{Float32, 2}
+│    %320 = (%318)(%319, 1)::Node{Float32, 2}
+│    %321 = Base.getproperty(%320, :val)::Float32
+│    %322 = r::Node{Float32, 2}
+│    %323 = Base.getproperty(%322, :val)::Float32
+│           (simplified_const = (%317)(%321, %323))
+│    %325 = DynamicExpressions.SimplifyModule.set_child!::Core.Const(DynamicExpressions.NodeModule.set_child!)
+│    %326 = tree@_12::Node{Float32, 2}
+│    %327 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %328 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %329 = tree@_12::Node{Float32, 2}
+│    %330 = (%328)(%329, 1)::Node{Float32, 2}
+│    %331 = (%327)(%330, 2)::Node{Float32, 2}
+│           (%325)(%326, %331, 2)
+│    %333 = DynamicExpressions.SimplifyModule.set_child!::Core.Const(DynamicExpressions.NodeModule.set_child!)
+│    %334 = tree@_12::Node{Float32, 2}
+│    %335 = r::Node{Float32, 2}
+│           (%333)(%334, %335, 1)
+│    %337 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %338 = tree@_12::Node{Float32, 2}
+│    %339 = (%337)(%338, 1)::Node{Float32, 2}
+│    %340 = simplified_const::Float32
+│           Base.setproperty!(%339, :val, %340)
+└───        goto #42
+40 ─ %343 = DynamicExpressions.SimplifyModule.is_node_constant::Core.Const(DynamicExpressions.NodeUtilsModule.is_node_constant)
+│    %344 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %345 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %346 = tree@_12::Node{Float32, 2}
+│    %347 = (%345)(%346, 1)::Node{Float32, 2}
+│    %348 = (%344)(%347, 2)::Node{Float32, 2}
+│    %349 = (%343)(%348)::Bool
+└───        goto #42 if not %349
+41 ─ %351 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %352 = tree@_12::Node{Float32, 2}
+│           (l = (%351)(%352, 1))
+│    %354 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %355 = tree@_12::Node{Float32, 2}
+│           (r = (%354)(%355, 2))
+│    %357 = DynamicExpressions.SimplifyModule.:+::Core.Const(+)
+│    %358 = r::Node{Float32, 2}
+│    %359 = Base.getproperty(%358, :val)::Float32
+│    %360 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %361 = l::Node{Float32, 2}
+│    %362 = (%360)(%361, 2)::Node{Float32, 2}
+│    %363 = Base.getproperty(%362, :val)::Float32
+│           (simplified_const = (%357)(%359, %363))
+│    %365 = DynamicExpressions.SimplifyModule.set_child!::Core.Const(DynamicExpressions.NodeModule.set_child!)
+│    %366 = tree@_12::Node{Float32, 2}
+│    %367 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %368 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %369 = tree@_12::Node{Float32, 2}
+│    %370 = (%368)(%369, 1)::Node{Float32, 2}
+│    %371 = (%367)(%370, 1)::Node{Float32, 2}
+│           (%365)(%366, %371, 1)
+│    %373 = DynamicExpressions.SimplifyModule.get_child::Core.Const(DynamicExpressions.NodeModule.get_child)
+│    %374 = tree@_12::Node{Float32, 2}
+│    %375 = (%373)(%374, 2)::Node{Float32, 2}
+│    %376 = simplified_const::Float32
+└───        Base.setproperty!(%375, :val, %376)
+42 ┄ %378 = tree@_12::Node{Float32, 2}
+└───        return %378
+
