@@ -1,0 +1,46 @@
+   Resolving package versions...
+   Installed BitTwiddlingConvenienceFunctions ─ v0.1.6
+   Installed SIMDTypes ──────────────────────── v0.1.0
+   Installed HostCPUFeatures ────────────────── v0.1.18
+   Installed ManualMemory ───────────────────── v0.1.8
+   Installed CommonWorldInvalidations ───────── v1.2.2
+   Installed SLEEFPirates ───────────────────── v0.6.46
+   Installed VectorizationBase ──────────────── v0.21.74
+   Installed LoopVectorization ──────────────── v0.12.176
+   Installed IfElse ─────────────────────────── v0.1.1
+   Installed LayoutPointers ─────────────────── v0.1.17
+   Installed CpuId ──────────────────────────── v0.3.3
+   Installed CPUSummary ─────────────────────── v0.2.7
+   Installed CloseOpenIntervals ─────────────── v0.1.13
+   Installed SciMLPublic ────────────────────── v1.3.0
+   Installed StaticArrayInterface ───────────── v1.10.0
+   Installed Static ─────────────────────────── v1.4.6
+   Installed ThreadingUtilities ─────────────── v0.5.7
+   Installed PolyesterWeave ─────────────────── v0.2.2
+   Installed UnPack ─────────────────────────── v1.0.2
+    Updating `~/Developer/pysr/.venv/julia_env/Project.toml`
+  [bdcacae8] + LoopVectorization v0.12.176
+    Updating `~/Developer/pysr/.venv/julia_env/Manifest.toml`
+  [62783981] + BitTwiddlingConvenienceFunctions v0.1.6
+  [2a0fbf3d] + CPUSummary v0.2.7
+  [fb6a15b2] + CloseOpenIntervals v0.1.13
+  [f70d9fcc] + CommonWorldInvalidations v1.2.2
+  [adafc99b] + CpuId v0.3.3
+  [3e5b6fbb] + HostCPUFeatures v0.1.18
+  [615f187c] + IfElse v0.1.1
+  [10f19ff3] + LayoutPointers v0.1.17
+  [bdcacae8] + LoopVectorization v0.12.176
+  [d125e4d3] + ManualMemory v0.1.8
+  [6fe1bfb0] + OffsetArrays v1.18.0
+  [1d0040c9] + PolyesterWeave v0.2.2
+  [94e857df] + SIMDTypes v0.1.0
+  [476501e8] + SLEEFPirates v0.6.46
+  [431bcebd] + SciMLPublic v1.3.0
+  [aedffcd0] + Static v1.4.6
+  [0d7ed370] + StaticArrayInterface v1.10.0
+  [8290d209] + ThreadingUtilities v0.5.7
+  [3a884ed6] + UnPack v1.0.2
+  [3d5dd08c] + VectorizationBase v0.21.74
+     Project No packages added to or removed from `~/Developer/pysr/.venv/julia_env/Project.toml`
+    Manifest No packages added to or removed from `~/Developer/pysr/.venv/julia_env/Manifest.toml`
+turbo ok

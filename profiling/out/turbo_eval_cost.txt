@@ -1,0 +1,8 @@
+rows=1000 trees=200 finite=179  max rel loss diff=5.48e-04  median=0.00e+00  identical=138
+eval_loss plain  median    22227 ns/call  range    21767 -    25883  (n=7)
+eval_loss turbo  median     4055 ns/call  range     3966 -     6016  (n=7)
+per-call speedup: 5.48x
+rows=50 trees=200 finite=191  max rel loss diff=2.46e-04  median=0.00e+00  identical=139
+eval_loss plain  median     1543 ns/call  range     1503 -     1948  (n=7)
+eval_loss turbo  median     1042 ns/call  range     1033 -     1083  (n=7)
+per-call speedup: 1.48x

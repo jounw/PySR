@@ -1,0 +1,13 @@
+warmup turbo=False: 9.18 s
+warmup turbo=True: 28.57 s
+rows=1000 turbo=False: 27.18 s  hof=15 best_loss=2.67e-15
+rows=1000 turbo=True: 9.18 s  hof=12 best_loss=6.14e-15
+rows=1000 turbo=False: 25.23 s  hof=15 best_loss=2.67e-15
+rows=1000 turbo=True: 9.19 s  hof=12 best_loss=6.14e-15
+rows=1000 turbo=False: 25.78 s  hof=15 best_loss=2.67e-15
+rows=1000 turbo=True: 9.07 s  hof=12 best_loss=6.14e-15
+rows=1000 turbo=False: 25.36 s  hof=15 best_loss=2.67e-15
+rows=1000 turbo=True: 9.17 s  hof=12 best_loss=6.14e-15
+turbo=False: median 25.57 s  range 25.23-27.18  n=4
+turbo=True: median 9.17 s  range 9.07-9.19  n=4
+same final equations: False
