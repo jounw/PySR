@@ -43,12 +43,15 @@ def pysr_fit():
     )
     t = time.perf_counter()
     m.fit(X, y)
-    return time.perf_counter() - t
+    t = time.perf_counter() - t
+    return f"{t:.2f} s  hof={len(m.equations_)} best_loss={float(m.equations_['loss'].min()):.3g}"
 
 
+# Check Julia sees the same matrix numpy wrote (an earlier version did not).
+assert np.array_equal(np.asarray(jl.seval("GX")), X.T)
 pysr_fit()  # warm up the PySR-specific path
 for _ in range(2):
     for save in ("false", "true"):
-        t = jl.seval(f"run_direct(GX, GY; save_to_file={save}, seed={SEED})")
-        print(f"python-juliacall direct save_to_file={save}: {t:.2f} s", flush=True)
-    print(f"python PySRRegressor.fit: {pysr_fit():.2f} s", flush=True)
+        t, n, best = jl.seval(f"run_direct(GX, GY; save_to_file={save}, seed={SEED})")
+        print(f"python-juliacall direct save_to_file={save}: {t:.2f} s  hof={n} best_loss={best:.3g}", flush=True)
+    print(f"python PySRRegressor.fit: {pysr_fit()}", flush=True)

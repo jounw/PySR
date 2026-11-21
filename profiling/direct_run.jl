@@ -3,11 +3,13 @@
 using SymbolicRegression
 
 function load_xy(dir)
-    X = Matrix{Float32}(undef, 1000, 5)
+    # numpy's row-major (1000, 5) bytes are exactly a column-major 5x1000
+    # matrix, which is the features-by-rows layout equation_search expects.
+    X = Matrix{Float32}(undef, 5, 1000)
     y = Vector{Float32}(undef, 1000)
-    read!(joinpath(dir, "X.f32"), X)  # row-major from numpy == column-major X'
+    read!(joinpath(dir, "X.f32"), X)
     read!(joinpath(dir, "y.f32"), y)
-    return permutedims(X), y
+    return X, y
 end
 
 function run_direct(X, y; save_to_file::Bool, niterations=40, seed=0)
@@ -17,7 +19,10 @@ function run_direct(X, y; save_to_file::Bool, niterations=40, seed=0)
         maxsize=30, deterministic=true, seed, save_to_file,
         output_directory=mktempdir(),
     )
-    t = @elapsed equation_search(X, y; options, niterations, parallelism=:serial,
-        verbosity=0, progress=false, return_state=true)
-    return t
+    t = @elapsed ((_, hof) = equation_search(X, y; options, niterations,
+        parallelism=:serial, verbosity=0, progress=false, return_state=true))
+    # Summarize the hall of fame so runs can be checked for doing the same work.
+    members = [m for (m, e) in zip(hof.members, hof.exists) if e]
+    best = minimum(m.loss for m in members)
+    return (t, length(members), Float64(best))
 end

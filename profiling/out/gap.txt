@@ -1,10 +1,10 @@
-python-juliacall direct save_to_file=false: 50.54 s
-python-juliacall direct save_to_file=true: 50.63 s
-python PySRRegressor.fit: 25.30 s
-python-juliacall direct save_to_file=false: 50.59 s
-python-juliacall direct save_to_file=true: 50.57 s
-python PySRRegressor.fit: 25.28 s
-julia-cli save_to_file=false: 50.63 s
-julia-cli save_to_file=true: 50.91 s
-julia-cli save_to_file=false: 50.74 s
-julia-cli save_to_file=true: 50.79 s
+python-juliacall direct save_to_file=false: 24.68 s  hof=30 best_loss=2.67e-15
+python-juliacall direct save_to_file=true: 27.98 s  hof=30 best_loss=2.67e-15
+python PySRRegressor.fit: 26.40 s  hof=15 best_loss=2.67e-15
+python-juliacall direct save_to_file=false: 25.61 s  hof=30 best_loss=2.67e-15
+python-juliacall direct save_to_file=true: 25.28 s  hof=30 best_loss=2.67e-15
+python PySRRegressor.fit: 25.61 s  hof=15 best_loss=2.67e-15
+julia-cli save_to_file=false: 26.59 s  hof=30 best_loss=2.67e-15
+julia-cli save_to_file=true: 26.19 s  hof=30 best_loss=2.67e-15
+julia-cli save_to_file=false: 25.42 s  hof=30 best_loss=2.67e-15
+julia-cli save_to_file=true: 27.25 s  hof=30 best_loss=2.67e-15
